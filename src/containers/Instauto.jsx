@@ -6,8 +6,13 @@ const Instauto = () => {
   return (
     <Switch>
       <Route path={["/"]} exact>
-        <MainLayout>
+        <MainLayout main>
           <Route path="/" exact component={Home} />
+        </MainLayout>
+      </Route>
+      <Route path={["/order"]} exact>
+        <MainLayout>
+          <Route path="/order" exact component={Home} />
         </MainLayout>
       </Route>
     </Switch>

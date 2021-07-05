@@ -5,42 +5,52 @@ import SettingsIcon from "@material-ui/icons/Settings";
 import AllInboxIcon from "@material-ui/icons/AllInbox";
 import WhatshotIcon from "@material-ui/icons/Whatshot";
 import { useState } from "react";
+import { useHistory } from "react-router-dom";
 const BottomNavigation = () => {
   const [label] = useState(true);
+  const [list] = useState([
+    { label: "اصلی", Icon: HomeIcon, url: "/", centered: false },
+    {
+      label: "پیگیری",
+      Icon: AllInboxIcon,
+      url: `/order?user=mmdzov`,
+      centered: false,
+    },
+    { label: "", Icon: StoreIcon, url: "/store", centered: true },
+    { label: "", Icon: StoreIcon, url: "", centered: false },
+    {
+      label: "سفارش",
+      Icon: WhatshotIcon,
+      url: "/order",
+      centered: false,
+      color: "#ff4c4c",
+    },
+    { label: "تنظیمات", Icon: SettingsIcon, url: "/setting", centered: false },
+  ]);
+  const history = useHistory();
+  const handleGo = (path) => {
+    if (path) {
+      history.push(path);
+    }
+  };
   return (
     <Container>
       <div className="">
-        <div className="item">
-          <div className="icon">
-            <HomeIcon />
+        {list?.map((item) => (
+          <div
+            className={`item ${item?.centered ? "centered" : ""}`}
+            key={item?.url}
+            onClick={() => handleGo(item?.url)}
+          >
+            <div
+              className="icon"
+              style={{ color: item?.color ? item?.color : "" }}
+            >
+              <item.Icon />
+            </div>
+            {label ? <div className="label">{item?.label}</div> : null}
           </div>
-          {label ? <div className="label">اصلی</div> : null}
-        </div>
-        <div className="item">
-          <div className="icon">
-            <AllInboxIcon />
-          </div>
-          {label ? <div className="label">پیگیری</div> : null}
-        </div>
-        <div className="item centered">
-          <div className="icon">
-            <StoreIcon />
-          </div>
-          {/* {label ? <div className="label">فروشگاه</div> : null} */}
-        </div>
-        <div className="item" style={{ cursor: "unset" }}></div>
-        <div className="item">
-          <div className="icon" style={{ color: "#ff4c4c" }}>
-            <WhatshotIcon />
-          </div>
-          {label ? <div className="label">سفارش</div> : null}
-        </div>
-        <div className="item">
-          <div className="icon">
-            <SettingsIcon />
-          </div>
-          {label ? <div className="label">تنظیمات</div> : null}
-        </div>
+        ))}
       </div>
     </Container>
   );
