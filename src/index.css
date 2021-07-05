@@ -16,3 +16,25 @@ code {
   font-family: "digitalNinja";
   src: url("./assets/fonts/DigitalNinja-Mz6e.ttf") format("truetype"); /* Chrome 4+, Firefox 3.5, Opera 10+, Safari 3—5 */
 }
+
+@font-face {
+  font-family: Samim;
+  src: url("./assets/fonts/samim/Samim.eot");
+  src: url("./assets/fonts/samim/Samim.eot?#iefix") format("embedded-opentype"),
+    url("./assets/fonts/samim/Samim.woff") format("woff"),
+    url("./assets/fonts/samim/Samim.ttf") format("truetype");
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: Samim;
+  src: url("./assets/fonts/samim/Samim-Bold.eot");
+  src: url("./assets/fonts/samim/Samim-Bold.eot?#iefix")
+      format("embedded-opentype"),
+    url("./assets/fonts/samim/Samim-Bold.woff") format("woff"),
+    url("./assets/fonts/samim/Samim-Bold.ttf") format("truetype");
+  font-weight: bold;
+}
+* {
+  font-family: samim;
+}

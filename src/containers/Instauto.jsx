@@ -1,6 +1,7 @@
 import { Route, Switch } from "react-router-dom";
 import MainLayout from "../layouts/MainLayout";
 import Home from "../pages/Home/Home";
+import Order from "../pages/Order/Order";
 
 const Instauto = () => {
   return (
@@ -12,7 +13,7 @@ const Instauto = () => {
       </Route>
       <Route path={["/order"]} exact>
         <MainLayout>
-          <Route path="/order" exact component={Home} />
+          <Route path="/order" exact component={Order} />
         </MainLayout>
       </Route>
     </Switch>

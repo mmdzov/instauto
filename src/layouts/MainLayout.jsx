@@ -7,7 +7,7 @@ import useDevice from "../hooks/useDevice";
 const MainLayout = ({ main = false, children }) => {
   const mobile = useDevice();
   return (
-    <Container>
+    <Container mobile={mobile}>
       <Navigation />
       {main ? <MainToolbar /> : null}
       {children}
@@ -16,6 +16,8 @@ const MainLayout = ({ main = false, children }) => {
   );
 };
 
-const Container = styled.div``;
+const Container = styled.div`
+  padding-bottom: ${({ mobile }) => (mobile ? "100px" : "0px")};
+`;
 
 export default MainLayout;

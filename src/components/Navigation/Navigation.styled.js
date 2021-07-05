@@ -5,6 +5,7 @@ export const Container = styled.nav`
   height: 51px;
   width: 100%;
   justify-content: space-between;
+  background: white;
   align-items: center;
   box-shadow: 0 5px 9px -6px #8e8e8e;
   position: sticky;
