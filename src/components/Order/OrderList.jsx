@@ -6,12 +6,9 @@ import PeopleIcon from "@material-ui/icons/People";
 import ModeCommentIcon from "@material-ui/icons/ModeComment";
 import VisibilityIcon from "@material-ui/icons/Visibility";
 import ThumbUpAltIcon from "@material-ui/icons/ThumbUpAlt";
+import persianNumber from "../../utils/persianNumber";
 
 const OrderList = ({ item = {}, list = [] }) => {
-  const persianNumber = (number) => {
-    const nm = +number;
-    return nm.toLocaleString("fa-IR");
-  };
   const titleBackground = (type) => {
     if (type === "follower") return "#2196f329";
     else if (type === "like") return "#ff4c4c45";

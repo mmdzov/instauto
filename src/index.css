@@ -47,3 +47,14 @@ body {
   /* height: 519px; */
   overflow-x: hidden;
 }
+
+.ant-scrolling-effect {
+  width: 100% !important;
+}
+
+.ant-modal-wrap.ant-modal-centered.ant-modal-wrap-rtl {
+  overflow: hidden !important;
+}
+.ant-modal-content {
+  border-radius: 5px;
+}

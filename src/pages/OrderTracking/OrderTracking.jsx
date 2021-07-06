@@ -13,7 +13,7 @@ const OrderTracking = () => {
     },
     {
       order: 436577,
-      type: "فالو",
+      type: "فالوور",
       username: "mmdzov",
       trackCount: 23,
       count: 5000,
