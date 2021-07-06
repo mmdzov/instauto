@@ -56,9 +56,14 @@ const Order = () => {
     },
   ]);
   return (
-    <Container className="">
+    <Container className="container">
       {list?.map((item) => (
-        <OrderList title={item?.title} list={item?.list} key={item?.token} />
+        <OrderList
+          title={item?.title}
+          item={item}
+          list={item?.list}
+          key={item?.token}
+        />
       ))}
     </Container>
   );

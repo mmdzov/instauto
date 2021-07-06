@@ -11,7 +11,7 @@ const MainToolbar = () => {
   const history = useHistory();
 
   return (
-    <Container className="">
+    <Container className="containerToolbar">
       {list?.map((item) => (
         <div
           className="item"

@@ -13,7 +13,7 @@ const BottomNavigation = () => {
     {
       label: "پیگیری",
       Icon: AllInboxIcon,
-      url: `/order?user=mmdzov`,
+      url: `/order/mmdzov`,
       centered: false,
     },
     { label: "", Icon: StoreIcon, url: "/store", centered: true },
@@ -35,7 +35,7 @@ const BottomNavigation = () => {
   };
   return (
     <Container>
-      <div className="">
+      <div className="bottomNavContainer">
         {list?.map((item) => (
           <div
             className={`item ${item?.centered ? "centered" : ""}`}

@@ -38,3 +38,12 @@ code {
 * {
   font-family: samim;
 }
+body {
+  overflow: hidden;
+}
+
+.container {
+  overflow: auto;
+  /* height: 519px; */
+  overflow-x: hidden;
+}

@@ -29,7 +29,7 @@ const Navigation = () => {
   };
   const mobile = useDevice();
   return (
-    <Container className="">
+    <Container className="navContainer">
       <div className="username">mmdzov</div>
       <div className="coinContainer">
         <div className="coinCount">1235353</div>

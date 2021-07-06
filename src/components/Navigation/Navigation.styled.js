@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.nav`
   display: flex;
-  height: 51px;
+  height: 50px;
   width: 100%;
   justify-content: space-between;
   background: white;
@@ -21,7 +21,7 @@ export const Container = styled.nav`
       margin-right: 5px;
       color: #565656;
       font-size: 0.8rem;
-      margin-bottom: 2px;
+      margin-bottom: -2px;
     }
   }
   & .menuicon {

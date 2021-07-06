@@ -6,6 +6,7 @@ export const Container = styled.div`
   background: #f3f3f3;
   border-top: 1px solid #ccc;
   width: 100%;
+  /* height: 65px; */
   & > div {
     display: flex;
     width: 100%;
@@ -32,14 +33,15 @@ export const Container = styled.div`
       top: -30px;
       width: 65px;
       height: 65px;
-      background: #ff9800;
+      background: #ff4c4c;
       color: white;
       border-radius: 100px;
       display: flex;
       align-items: center;
       justify-content: center;
-      border: 1px solid #ccc;
+      /* border: 1px solid #ccc; */
       padding-top: 8px;
+      /* box-shadow: 0px 0px 8px 1px #ff4c4c; */
       & svg {
         font-size: 3rem !important;
       }

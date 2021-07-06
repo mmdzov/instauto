@@ -3,7 +3,7 @@ import { Container } from "./Home.styled";
 
 const Home = () => {
   return (
-    <Container>
+    <Container className="container">
       <List mode="all" />
     </Container>
   );
