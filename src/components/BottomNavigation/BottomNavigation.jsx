@@ -6,6 +6,8 @@ import AllInboxIcon from "@material-ui/icons/AllInbox";
 import WhatshotIcon from "@material-ui/icons/Whatshot";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
+import AddIcon from "@material-ui/icons/Add";
+
 const BottomNavigation = () => {
   const [label] = useState(true);
   const [list] = useState([
@@ -16,8 +18,8 @@ const BottomNavigation = () => {
       url: `/order/mmdzov`,
       centered: false,
     },
-    { label: "", Icon: StoreIcon, url: "/store", centered: true },
-    { label: "", Icon: StoreIcon, url: "", centered: false },
+    { label: "", Icon: AddIcon, url: "/store", centered: true },
+    { label: "", Icon: null, url: "", centered: false },
     {
       label: "سفارش",
       Icon: WhatshotIcon,
@@ -42,12 +44,14 @@ const BottomNavigation = () => {
             key={item?.url}
             onClick={() => handleGo(item?.url)}
           >
-            <div
-              className="icon"
-              style={{ color: item?.color ? item?.color : "" }}
-            >
-              <item.Icon />
-            </div>
+            {item?.Icon ? (
+              <div
+                className="icon"
+                style={{ color: item?.color ? item?.color : "" }}
+              >
+                <item.Icon />
+              </div>
+            ) : null}
             {label ? <div className="label">{item?.label}</div> : null}
           </div>
         ))}

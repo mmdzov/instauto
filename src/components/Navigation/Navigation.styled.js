@@ -12,6 +12,7 @@ export const Container = styled.nav`
   top: 0;
   & .username {
     padding-left: 10px;
+    cursor: pointer;
   }
   & .coinContainer {
     display: flex;
@@ -56,5 +57,29 @@ export const Container = styled.nav`
   .ant-menu-vertical-right .ant-menu-item:not(:last-child),
   .ant-menu-inline .ant-menu-item:not(:last-child) {
     margin-bottom: 0;
+  }
+`;
+export const SimpleNavContainer = styled.div`
+  display: flex;
+  height: 50px;
+  width: 100%;
+  justify-content: space-between;
+  background: white;
+  align-items: center;
+  /* box-shadow: 0 5px 9px -9px #8e8e8e; */
+  position: sticky;
+  top: 0;
+  border-bottom: 1px solid #eee;
+  padding: 0 10px;
+  background: #fbfbfb;
+  & .icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+  }
+  & .title {
+    font-size: 1rem;
+    color: #4e4e4e;
   }
 `;

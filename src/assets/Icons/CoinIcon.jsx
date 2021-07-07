@@ -85,8 +85,8 @@ const Container = styled.div`
     font-family: digitalNinja;
     font-size: 0.7rem;
     position: absolute;
-    left: 4.2px;
-    top: 5.5px;
+    left: 5px;
+    top: 7px;
     color: #45563c;
     height: 26px;
     transform: skewY(16deg);

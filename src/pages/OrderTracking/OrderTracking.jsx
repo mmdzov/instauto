@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 import OrderTrackingList from "../../components/OrderTracking/OrderTrackingList";
 
 const OrderTracking = () => {
@@ -36,6 +37,8 @@ const OrderTracking = () => {
       status: "canceled",
     },
   ]);
+  const { pathname } = useLocation();
+  if (pathname?.split("/")[2] === "new") return <div className=""></div>;
   return (
     <div className="container">
       <OrderTrackingList list={list} />

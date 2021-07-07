@@ -4,9 +4,10 @@ import styled from "styled-components";
 import BottomNavigation from "../components/BottomNavigation/BottomNavigation";
 import MainToolbar from "../components/MainToolbar/MainToolbar";
 import Navigation from "../components/Navigation/Navigation";
+import SimpleNavigation from "../components/Navigation/SimpleNavigation";
 import useDevice from "../hooks/useDevice";
 
-const MainLayout = ({ main = false, children }) => {
+const MainLayout = ({ main = false, topNav = true, children }) => {
   const mobile = useDevice(handleSetHeight);
   const { pathname } = useLocation();
   const [contentHeight, setContentHeight] = useState(0);
@@ -33,7 +34,7 @@ const MainLayout = ({ main = false, children }) => {
   }, [mobile, pathname]);
   return (
     <Container mobile={mobile} h={contentHeight}>
-      <Navigation />
+      {topNav ? <Navigation /> : <SimpleNavigation />}
       {main ? <MainToolbar /> : null}
       {children}
       {mobile ? <BottomNavigation /> : null}

@@ -6,6 +6,8 @@ import { useEffect, useRef, useState } from "react";
 import Coin from "../Coin/Coin";
 import CoinIconLarge from "../../assets/Icons/CoinIconLarge";
 import useDevice from "../../hooks/useDevice";
+import { useHistory } from "react-router-dom";
+import Gem from "../../assets/images/icons8-jewel-48.png";
 const { SubMenu } = Menu;
 const Navigation = () => {
   const menuRef = useRef();
@@ -27,13 +29,50 @@ const Navigation = () => {
   const handleOpenMenu = () => {
     setOpenMenu((prev) => !prev);
   };
+  const history = useHistory();
   const mobile = useDevice();
   return (
     <Container className="navContainer">
-      <div className="username">mmdzov</div>
+      <div
+        onClick={() => history.push(`/profile/mmdzov`)}
+        className=""
+        style={{
+          display: "flex",
+          alignItems: "center",
+          paddingLeft: "5px",
+          cursor: "pointer",
+        }}
+      >
+        <img
+          src="https://www.talab.org/wp-content/uploads/2018/04/692060199-talab-org.jpg"
+          style={{ height: "40px", width: "40px", borderRadius: "100px" }}
+          alt=""
+        />
+        <div className="username">mmdzov</div>
+      </div>
       <div className="coinContainer">
-        <div className="coinCount">1235353</div>
+        <div className="coinCount" style={{ marginBottom: "-4px" }}>
+          1235353
+        </div>
         <Coin />
+        <div className="" style={{ display: "flex", alignItems: "center" }}>
+          <span
+            style={{ marginTop: "3px", fontSize: ".8rem", color: "#565656" }}
+          >
+            423
+          </span>
+          <img
+            src={Gem}
+            alt=""
+            style={{
+              width: "20px",
+              height: "20px",
+              transform: "rotate(45deg)",
+              marginTop: "-5px",
+              marginLeft: "4px",
+            }}
+          />
+        </div>
         {!mobile ? (
           <div className="menuicon" onClick={handleOpenMenu}>
             <MenuIcon />
