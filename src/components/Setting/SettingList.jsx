@@ -45,7 +45,11 @@ const SettingList = ({ data }) => {
       {data?.map((item) => (
         <Fragment>
           {item?.type === "item" ? (
-            <div className="unit" onClick={() => handleClickItem(item)}>
+            <div
+              className="unit"
+              key={~~(Math.random() * 9999999)}
+              onClick={() => handleClickItem(item)}
+            >
               <div className="right">
                 {item?.Icon ? (
                   <div className="icon">
@@ -70,7 +74,7 @@ const SettingList = ({ data }) => {
               {item?.label ? <div className="label">{item?.label}</div> : null}
             </div>
           ) : item?.type === "list" ? (
-            <div className="">
+            <div className="" key={~~(Math.random() * 9999999)}>
               <div
                 className="unit"
                 onClick={() =>
@@ -94,7 +98,11 @@ const SettingList = ({ data }) => {
               </div>
               <div id="settingList" className="list">
                 {item?.list?.map((item) => (
-                  <div className="item" style={{ padding: "0 10px" }}>
+                  <div
+                    className="item"
+                    key={~~(Math.random() * 9999999)}
+                    style={{ padding: "0 10px" }}
+                  >
                     <div className="unit">
                       <div className="right">
                         {item?.Icon ? (

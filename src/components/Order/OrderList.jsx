@@ -42,7 +42,7 @@ const OrderList = ({ item = {}, list = [] }) => {
         </div>
       </div>
       {list?.map((item) => (
-        <div className="item">
+        <div className="item" key={~~(Math.random() * 9999999)}>
           <div className="">{persianNumber(item?.amount)}</div>
           <div className="">{toToman(item?.price)}</div>
         </div>

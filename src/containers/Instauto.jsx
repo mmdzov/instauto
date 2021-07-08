@@ -1,6 +1,8 @@
 import { Route, Switch } from "react-router-dom";
 import MainLayout from "../layouts/MainLayout";
+import Forum from "../pages/Forum/Forum";
 import Home from "../pages/Home/Home";
+import Login from "../pages/Login/Login";
 import NewOrder from "../pages/NewOrder/NewOrder";
 import Order from "../pages/Order/Order";
 import OrderTracking from "../pages/OrderTracking/OrderTracking";
@@ -21,7 +23,13 @@ const Instauto = () => {
         </MainLayout>
       </Route>
       <Route
-        path={["/order", "/order/:token", "/order/:token/:order", "/order/new"]}
+        path={[
+          "/order",
+          "/order/:token",
+          "/forum",
+          "/order/:token/:order",
+          "/order/new",
+        ]}
         exact
       >
         <MainLayout>
@@ -29,8 +37,10 @@ const Instauto = () => {
           <Route path="/order/:token/:order" exact component={SingleOrder} />
           <Route path="/order/:token" component={OrderTracking} />
           <Route path="/order/new" exact component={NewOrder} />
+          <Route path="/forum" exact component={Forum} />
         </MainLayout>
       </Route>
+      <Route path="/login" exact component={Login} />
     </Switch>
   );
 };

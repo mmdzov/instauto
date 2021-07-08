@@ -1,8 +1,12 @@
 import persianNumber from "../../utils/persianNumber";
-import { OrderTrackingListContainer } from "./OrderTracking.styled";
+import {
+  OrderNotFound,
+  OrderTrackingListContainer,
+} from "./OrderTracking.styled";
 import { useHistory } from "react-router-dom";
 import { useState } from "react";
 import ReportModal from "../ReportModal/ReportModal";
+import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 const OrderTrackingList = ({ list }) => {
   const orderStatus = (status) => {
     if (status === "doing")
@@ -26,6 +30,15 @@ const OrderTrackingList = ({ list }) => {
     setOrderCode(code);
     setOpenReport(true);
   };
+  if (list?.length === 0)
+    return (
+      <OrderNotFound className="addOrder">
+        هنوز سفارشی ثبت نکردی!
+        <div className="addOrderButton" onClick={() => history.push("/order")}>
+          ثبت سفارش
+        </div>
+      </OrderNotFound>
+    );
   return (
     <OrderTrackingListContainer className="">
       <ReportModal
@@ -35,8 +48,14 @@ const OrderTrackingList = ({ list }) => {
         setOpen={setOpenReport}
         callback={onReport}
       />
+      <div className="addOrderBox" onClick={() => history.push("/order")}>
+        <div className="">ثبت سفارش</div>
+        <div className="">
+          <ShoppingBasketIcon />
+        </div>
+      </div>
       {list?.map((item) => (
-        <div className="item">
+        <div className="item" key={~~(Math.random() * 9999999)}>
           <div className="row">
             <div className="subItem" style={{ fontSize: "1rem" }}>
               سفارش : <span style={{ fontSize: ".8rem" }}>{item?.type}</span>

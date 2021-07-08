@@ -4,7 +4,7 @@ const List = ({ items = [], mode = "" }) => {
   return (
     <Container>
       {items?.map((item) => (
-        <div className="item"></div>
+        <div className="item" key={~~(Math.random() * 9999999)}></div>
       ))}
     </Container>
   );

@@ -59,6 +59,7 @@ const Order = () => {
     <Container className="container">
       {list?.map((item) => (
         <OrderList
+          key={~~(Math.random() * 9999999)}
           title={item?.title}
           item={item}
           list={item?.list}
