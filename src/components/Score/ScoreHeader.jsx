@@ -2,9 +2,12 @@ import { ScoreHeaderContainer as Container } from "./Score.styled";
 import Avatar from "../../assets/images/avatar.jpg";
 import { useState } from "react";
 import { Progress } from "antd";
+import { useHistory } from "react-router-dom";
+
 const ScoreHeader = () => {
   const [level] = useState(34);
   const [premium] = useState(false);
+  const history = useHistory();
   const handlePremiumAccount = () => {
     if (!premium) {
       history.push("/store/premium");

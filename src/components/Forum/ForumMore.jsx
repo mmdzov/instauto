@@ -2,8 +2,9 @@ import { useState } from "react";
 import { ForumMoreContainer as Container } from "./Forum.styled";
 import StoreFrontIcon from "@material-ui/icons/Storefront";
 import PersonOutlineIcon from "@material-ui/icons/PersonOutline";
-
+import { useHistory } from "react-router-dom";
 const ForumMore = () => {
+  const history = useHistory();
   const [data] = useState([
     {
       title: "فروشگاه",
@@ -46,6 +47,8 @@ const ForumMore = () => {
         <div
           className="item"
           style={{ background: handleBackground(item?.type) }}
+          key={item?.token}
+          onClick={() => history.push(item?.url)}
         >
           <div className="icon">
             <item.Icon />

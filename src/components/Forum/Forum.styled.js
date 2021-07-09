@@ -160,7 +160,7 @@ export const ForumMoreContainer = styled.div`
 `;
 
 export const ForumUserLevelContainer = styled.div`
-  padding: 5px 10px;
+  /* padding: 5px 10px; */
   margin: 0 10px;
   margin-top: 10px;
   border: 1px solid #e8e8e8;
@@ -168,12 +168,40 @@ export const ForumUserLevelContainer = styled.div`
   box-shadow: 0px 4px 11px -10px black;
   margin-bottom: 20px;
   cursor: pointer;
+  overflow: hidden;
+  &.premium {
+  border: unset;
+    /* border-radius: 100px; */
+    color: white;
+    cursor: pointer;
+    background: linear-gradient(
+      126deg,
+      #f24646,
+      #0c8498,
+      #4311dd,
+      #ad2bdd,
+      #d01386,
+      #4ea513,
+      #5713a5
+    );
+    background-size: 1400% 1400%;
+    -webkit-animation: ${ItemAnimated} 50s ease infinite;
+    -moz-animation: ${ItemAnimated} 50s ease infinite;
+    -o-animation: ${ItemAnimated} 50s ease infinite;
+    animation: ${ItemAnimated} 50s ease infinite;
+    & .progressHeader {
+      border-bottom: unset;
+    }
+  }
+
   & .progressHeader {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-bottom: 7px;
     border-bottom: 1px solid #eee;
+    padding: 5px 10px;
+
     & .progressTitle {
       font-size: 1rem;
       & span {
@@ -189,10 +217,10 @@ export const ForumUserLevelContainer = styled.div`
   }
   & .progressContent {
     direction: ltr;
-    height: 35px;
     display: grid;
+    padding: 6px 10px;
     grid-template-columns: 1fr auto;
-
+    height: 46px;
     & .ant-progress-inner {
       direction: ltr;
     }
@@ -217,6 +245,14 @@ export const ForumUserLevelContainer = styled.div`
       display: flex;
       align-items: center;
       justify-content: center;
+      & img {
+        width: 25px;
+        height: 25px;
+        margin-left: 8px;
+      }
+      & .gemReward {
+        transform: rotate(45deg);
+      }
     }
   }
 `;
