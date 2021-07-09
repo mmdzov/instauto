@@ -2,7 +2,7 @@ import { ConvertHeaderContainer as Container } from "./Convert.styled";
 import { useState } from "react";
 import { Alert } from "antd";
 
-const ConvertHeader = ({ convertSwitch, setSwitch = () => {} }) => {
+const ConvertHeader = ({ setCount, convertSwitch, setSwitch = () => {} }) => {
   const [alert] = useState({
     title: "توجه!",
     message:
@@ -10,6 +10,7 @@ const ConvertHeader = ({ convertSwitch, setSwitch = () => {} }) => {
   });
   const handleChangeSwitch = () => {
     setSwitch((prev) => !prev);
+    setCount("");
   };
   return (
     <Container className="">
