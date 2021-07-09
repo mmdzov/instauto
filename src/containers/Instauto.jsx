@@ -11,6 +11,7 @@ import Score from "../pages/Score/Score";
 import Setting from "../pages/Setting/Setting";
 import SingleOrder from "../pages/SingleOrder/SingleOrder";
 import Convert from "../pages/Convert/Convert";
+import Transfer from "../pages/Transfer/Transfer";
 
 const Instauto = () => {
   return (
@@ -20,12 +21,16 @@ const Instauto = () => {
           <Route path="/" exact component={Home} />
         </MainLayout>
       </Route>
-      <Route path={["/setting", "/score", "/luckywheel", "/convert"]} exact>
+      <Route
+        path={["/setting", "/score", "/transfer", "/luckywheel", "/convert"]}
+        exact
+      >
         <MainLayout topNav={false}>
           <Route path="/setting" exact component={Setting} />
           <Route path="/score" exact component={Score} />
           <Route path="/luckywheel" exact component={LuckyWheel} />
           <Route path="/convert" exact component={Convert} />
+          <Route path="/transfer" exact component={Transfer} />
         </MainLayout>
       </Route>
       <Route

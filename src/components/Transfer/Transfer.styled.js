@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
-export const ConvertHeaderContainer = styled.div`
+export const TransferHeaderContainer = styled.div`
   width: 90%;
   margin: 0 auto;
   margin-top: 15px;
   & .ant-alert {
     border-radius: 5px;
   }
-  & .convertButton {
+  & .transferButton {
     height: 40px;
     margin-top: 10px;
     display: flex;
@@ -28,13 +28,10 @@ export const ConvertHeaderContainer = styled.div`
   }
 `;
 
-export const ConvertFormContainer = styled.form`
+export const TransferFormContainer = styled.form`
   direction: rtl;
   margin: 30px 0px;
   padding: 0 20px;
-  display: grid;
-  grid-gap: 10px;
-  margin-top: 0px;
   & .box {
     display: grid;
     grid-template-columns: 18fr auto;
