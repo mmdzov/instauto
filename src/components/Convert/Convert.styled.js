@@ -32,9 +32,7 @@ export const ConvertFormContainer = styled.form`
   direction: rtl;
   margin: 30px 0px;
   padding: 0 20px;
-  display: grid;
-  grid-gap: 10px;
-  margin-top: 0px;
+
   & .box {
     display: grid;
     grid-template-columns: 18fr auto;
