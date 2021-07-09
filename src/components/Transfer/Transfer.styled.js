@@ -35,7 +35,11 @@ export const TransferFormContainer = styled.form`
   display: grid;
   grid-gap: 10px;
   margin-top: 0px;
-
+  & .ant-input {
+    border-radius: 5px;
+    font-size: 0.8rem;
+    height: 35px;
+  }
   & .box {
     display: grid;
     grid-template-columns: 18fr auto;

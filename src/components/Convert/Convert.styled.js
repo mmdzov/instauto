@@ -32,7 +32,11 @@ export const ConvertFormContainer = styled.form`
   direction: rtl;
   margin: 30px 0px;
   padding: 0 20px;
-
+  & .ant-input {
+    border-radius: 5px;
+    font-size: 0.8rem;
+    height: 35px;
+  }
   & .box {
     display: grid;
     grid-template-columns: 18fr auto;

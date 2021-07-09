@@ -3,16 +3,17 @@ import ForumBest from "../../components/Forum/ForumBest";
 import ForumMore from "../../components/Forum/ForumMore";
 import ForumSuggest from "../../components/Forum/ForumSuggest";
 import ForumSuggestYou from "../../components/Forum/ForumSuggestYou";
+import ForumTop from "../../components/Forum/ForumTop";
 import ForumUserLevel from "../../components/Forum/ForumUserLevel";
-
 const Forum = () => {
   return (
     <Container className="container">
+      {/* <ForumTop /> */}
       <ForumUserLevel />
       <ForumMore />
       <ForumSuggestYou />
       <ForumSuggest />
-      <ForumBest />
+      {/* <ForumBest /> */}
     </Container>
   );
 };

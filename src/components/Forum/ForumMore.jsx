@@ -3,6 +3,12 @@ import { ForumMoreContainer as Container } from "./Forum.styled";
 import StoreFrontIcon from "@material-ui/icons/Storefront";
 import PersonOutlineIcon from "@material-ui/icons/PersonOutline";
 import { useHistory } from "react-router-dom";
+import CompareArrowsIcon from "@material-ui/icons/CompareArrows";
+import TransferWithinAStationIcon from "@material-ui/icons/TransferWithinAStation";
+import AccessibilityIcon from "@material-ui/icons/Accessibility";
+import GavelIcon from "@material-ui/icons/Gavel";
+import WorkIcon from "@material-ui/icons/Work";
+
 const ForumMore = () => {
   const history = useHistory();
   const [data] = useState([
@@ -15,16 +21,37 @@ const ForumMore = () => {
     },
     {
       title: "تبدیل سکه",
-      Icon: StoreFrontIcon,
+      Icon: CompareArrowsIcon,
       url: "/convert",
       type: "convert",
       token: ~~(Math.random() * 9999999),
     },
     {
       title: "انتقال سکه",
-      Icon: StoreFrontIcon,
+      Icon: TransferWithinAStationIcon,
       url: "/transfer",
       type: "transfer",
+      token: ~~(Math.random() * 9999999),
+    },
+    {
+      title: "برترین افراد",
+      Icon: AccessibilityIcon,
+      url: "/best",
+      type: "best",
+      token: ~~(Math.random() * 9999999),
+    },
+    {
+      title: "حراج و مزایده دارایی ها",
+      Icon: GavelIcon,
+      url: "/auction",
+      type: "auction",
+      token: ~~(Math.random() * 9999999),
+    },
+    {
+      title: "کسب و کار شما",
+      Icon: WorkIcon,
+      url: "/work",
+      type: "work",
       token: ~~(Math.random() * 9999999),
     },
     {
@@ -38,8 +65,11 @@ const ForumMore = () => {
   const handleBackground = (type) => {
     if (type === "store") return "crimson";
     else if (type === "contact") return "steelblue";
-    else if (type === "convert") return "#ffc107";
-    else if (type === "transfer") return "#4caf50";
+    else if (type === "convert") return "#3e3e3e";
+    else if (type === "transfer") return "#009688";
+    else if (type === "best") return "#8bc34a";
+    else if (type === "work") return "#9c27b0";
+    else if (type === "auction") return "#4caf50";
   };
   return (
     <Container>

@@ -141,15 +141,16 @@ export const ForumBestContainer = styled.div`
 
 export const ForumMoreContainer = styled.div`
   & .item {
-    margin: 0 10px;
-    height: 40px;
+    margin: 0 auto;
+    height: 43px;
     display: flex;
     align-items: center;
     margin-top: 10px;
-    border-radius: 100px;
+    border-radius: 11px;
     padding: 0 15px;
     color: white;
     cursor: pointer;
+    width: 90%;
     & .icon {
       height: 28px;
       margin-left: 5px;
@@ -170,7 +171,7 @@ export const ForumUserLevelContainer = styled.div`
   cursor: pointer;
   overflow: hidden;
   &.premium {
-  border: unset;
+    border: unset;
     /* border-radius: 100px; */
     color: white;
     cursor: pointer;
@@ -253,6 +254,36 @@ export const ForumUserLevelContainer = styled.div`
       & .gemReward {
         transform: rotate(45deg);
       }
+    }
+  }
+`;
+
+export const ForumTopContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10px;
+  height: 40px;
+  align-items: center;
+  font-size: 0.8rem;
+  /* background: #e91e63; */
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 10px;
+  /* /* color: white; */
+  & .forumTopTitle {
+  }
+  & .messageIcon {
+    height: 24px;
+    position: relative;
+    &.newMessage::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      height: 10px;
+      width: 10px;
+      border-radius: 100px;
+      background: red;
+      right: -3px;
     }
   }
 `;

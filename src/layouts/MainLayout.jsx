@@ -19,6 +19,9 @@ const MainLayout = ({ main = false, topNav = true, children }) => {
     const nav = document
       .getElementsByClassName("navContainer")[0]
       ?.getBoundingClientRect()?.height;
+    // const antTabNav = document
+    //   .getElementsByClassName("ant-tabs-nav")[0]
+    //   ?.getBoundingClientRect()?.height;
     const bottomNav = document
       .getElementsByClassName("bottomNavContainer")[0]
       ?.getBoundingClientRect()?.height;

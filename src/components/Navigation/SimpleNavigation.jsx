@@ -15,6 +15,7 @@ const SimpleNavigation = () => {
     else if (path.includes("luckywheel")) setTitle("گردونه شانس");
     else if (path.includes("convert")) setTitle("تبدیل");
     else if (path.includes("transfer")) setTitle("انتقال سکه");
+    else if (path.includes("best")) setTitle("برترین افراد");
   }, [pathname]);
   return (
     <Container className="navContainer">

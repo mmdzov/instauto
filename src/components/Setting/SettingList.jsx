@@ -5,6 +5,7 @@ import { Fragment } from "react";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import Question from "../Question/Question";
+import { message, Button, Space } from "antd";
 
 const SettingList = ({ data }) => {
   const history = useHistory();
@@ -31,9 +32,22 @@ const SettingList = ({ data }) => {
     }
   };
   const [open, setOpen] = useState(false);
+  function copyToClipboard(userid) {
+    let inp = document.createElement("input"),
+      text = userid;
+    document.body.appendChild(inp);
+    inp.value = text;
+    inp.select();
+    document.execCommand("copy");
+    document.body.removeChild(inp);
+    message?.success("آیدی عددی شما با موفقیت کپی شد");
+  }
   const handleClickItem = (item) => {
     if (item?.event === "leaveAccount") {
       setOpen(true);
+    }
+    if (item?.muted) {
+      copyToClipboard(item?.muted);
     }
   };
   const handleLeaveAccount = () => {
@@ -72,6 +86,11 @@ const SettingList = ({ data }) => {
                 />
               ) : null}
               {item?.label ? <div className="label">{item?.label}</div> : null}
+              {item?.muted ? (
+                <div className="muted" id="userId">
+                  {item?.muted}
+                </div>
+              ) : null}
             </div>
           ) : item?.type === "list" ? (
             <div className="" key={~~(Math.random() * 9999999)}>

@@ -62,6 +62,7 @@ export const Container = styled.nav`
 export const SimpleNavContainer = styled.div`
   display: flex;
   height: 50px;
+  z-index: 1;
   width: 100%;
   justify-content: space-between;
   background: white;

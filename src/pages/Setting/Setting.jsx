@@ -16,6 +16,13 @@ const Setting = () => {
     {
       title: "",
       type: "item",
+      item: "آیدی عددی شما",
+      url: "",
+      muted: "124355753",
+    },
+    {
+      title: "",
+      type: "item",
       item: "حالت شب",
       url: "",
       Icon: null,
@@ -71,7 +78,7 @@ const Setting = () => {
     {
       title: "",
       type: "item",
-      item: "قوانین و ظوابط",
+      item: "قوانین و ضوابط",
       url: "/terms",
       Icon: AssignmentOutlinedIcon,
     },

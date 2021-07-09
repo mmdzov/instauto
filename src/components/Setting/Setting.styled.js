@@ -89,6 +89,12 @@ export const SettingListContainer = styled.div`
       border-radius: 100px;
       color: white;
     }
+    & .muted {
+      font-size: 0.8rem;
+      color: #565656;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
     & .title {
       margin-right: 10px;
       font-size: 0.8rem;
