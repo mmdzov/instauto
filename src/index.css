@@ -37,6 +37,7 @@ code {
 }
 * {
   font-family: samim;
+  outline: none !important; 
 }
 body {
   overflow: hidden;

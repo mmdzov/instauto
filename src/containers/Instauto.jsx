@@ -1,4 +1,5 @@
 import { Route, Switch } from "react-router-dom";
+import LuckyWheel from "../pages/LuckyWheel/LuckyWheel";
 import MainLayout from "../layouts/MainLayout";
 import Forum from "../pages/Forum/Forum";
 import Home from "../pages/Home/Home";
@@ -6,6 +7,7 @@ import Login from "../pages/Login/Login";
 import NewOrder from "../pages/NewOrder/NewOrder";
 import Order from "../pages/Order/Order";
 import OrderTracking from "../pages/OrderTracking/OrderTracking";
+import Score from "../pages/Score/Score";
 import Setting from "../pages/Setting/Setting";
 import SingleOrder from "../pages/SingleOrder/SingleOrder";
 
@@ -17,9 +19,11 @@ const Instauto = () => {
           <Route path="/" exact component={Home} />
         </MainLayout>
       </Route>
-      <Route path={["/setting"]} exact>
+      <Route path={["/setting", "/score", "/luckywheel"]} exact>
         <MainLayout topNav={false}>
           <Route path="/setting" exact component={Setting} />
+          <Route path="/score" exact component={Score} />
+          <Route path="/luckywheel" exact component={LuckyWheel} />
         </MainLayout>
       </Route>
       <Route

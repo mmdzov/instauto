@@ -13,6 +13,20 @@ const ForumMore = () => {
       token: ~~(Math.random() * 9999999),
     },
     {
+      title: "تبدیل سکه",
+      Icon: StoreFrontIcon,
+      url: "/convert",
+      type: "convert",
+      token: ~~(Math.random() * 9999999),
+    },
+    {
+      title: "انتقال سکه",
+      Icon: StoreFrontIcon,
+      url: "/transfer",
+      type: "transfer",
+      token: ~~(Math.random() * 9999999),
+    },
+    {
       title: "ارتباط با پشتیبانی",
       Icon: PersonOutlineIcon,
       url: "/contact",
@@ -23,6 +37,8 @@ const ForumMore = () => {
   const handleBackground = (type) => {
     if (type === "store") return "crimson";
     else if (type === "contact") return "steelblue";
+    else if (type === "convert") return "#ffc107";
+    else if (type === "transfer") return "#4caf50";
   };
   return (
     <Container>
