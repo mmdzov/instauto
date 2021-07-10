@@ -43,5 +43,8 @@ export const ConvertFormContainer = styled.form`
     grid-gap: 10px;
   }
   & .tip {
+    font-size: 0.7rem;
+    margin-right: 5px;
+    color: #989898;
   }
 `;

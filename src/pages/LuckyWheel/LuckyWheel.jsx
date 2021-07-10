@@ -193,7 +193,7 @@ const LuckyWheel = () => {
           بچرخون
         </button>
       )}
-      <div class="display">
+      <div className="display">
         <span id="readout">
           : جایزه شما {"  "}
           <span id="result">{state.list[state.result]}</span>

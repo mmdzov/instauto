@@ -1,11 +1,12 @@
 import { SimpleNavContainer as Container } from "./Navigation.styled";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
-import { useHistory, useLocation } from "react-router-dom";
+import { useHistory, useLocation, useParams } from "react-router-dom";
 import { useState } from "react";
 import { useEffect } from "react";
 
 const SimpleNavigation = () => {
   const history = useHistory();
+  const { token } = useParams();
   const [title, setTitle] = useState("");
   const { pathname } = useLocation();
   useEffect(() => {
@@ -16,6 +17,12 @@ const SimpleNavigation = () => {
     else if (path.includes("convert")) setTitle("تبدیل");
     else if (path.includes("transfer")) setTitle("انتقال سکه");
     else if (path.includes("best")) setTitle("برترین افراد");
+    else if (path.includes("order") && token) setTitle(`سفارشات شما`);
+    else if (path.includes("order") && path.includes("new"))
+      setTitle("سفارش جدید");
+    else if (path.includes("order") && path.includes("special"))
+      setTitle("سفارش ویژه");
+    else if (path.includes("order")) setTitle("سفارش");
   }, [pathname]);
   return (
     <Container className="navContainer">

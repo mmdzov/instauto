@@ -30,6 +30,10 @@ const Instauto = () => {
           "/best",
           "/luckywheel",
           "/convert",
+          "/order/new",
+          "/order",
+          "/order/:token/:order",
+          "/order/:token",
         ]}
         exact
       >
@@ -40,23 +44,14 @@ const Instauto = () => {
           <Route path="/convert" exact component={Convert} />
           <Route path="/transfer" exact component={Transfer} />
           <Route path="/best" exact component={Best} />
-        </MainLayout>
-      </Route>
-      <Route
-        path={[
-          "/order",
-          "/order/:token",
-          "/forum",
-          "/order/:token/:order",
-          "/order/new",
-        ]}
-        exact
-      >
-        <MainLayout>
+          <Route path="/order/new" exact component={NewOrder} />
           <Route path="/order" exact component={Order} />
           <Route path="/order/:token/:order" exact component={SingleOrder} />
           <Route path="/order/:token" component={OrderTracking} />
-          <Route path="/order/new" exact component={NewOrder} />
+        </MainLayout>
+      </Route>
+      <Route path={["/forum"]} exact>
+        <MainLayout>
           <Route path="/forum" exact component={Forum} />
         </MainLayout>
       </Route>

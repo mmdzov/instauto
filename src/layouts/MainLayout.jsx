@@ -19,13 +19,16 @@ const MainLayout = ({ main = false, topNav = true, children }) => {
     const nav = document
       .getElementsByClassName("navContainer")[0]
       ?.getBoundingClientRect()?.height;
-    // const antTabNav = document
-    //   .getElementsByClassName("ant-tabs-nav")[0]
-    //   ?.getBoundingClientRect()?.height;
+    const antTabNav = document
+      .getElementsByClassName("ant-tabs-nav")[0]
+      ?.getBoundingClientRect()?.height;
     const bottomNav = document
       .getElementsByClassName("bottomNavContainer")[0]
       ?.getBoundingClientRect()?.height;
     let contentHeight = window.innerHeight - nav - bottomNav;
+    if (antTabNav) {
+      contentHeight -= antTabNav;
+    }
     c?.classList?.add("normalHeight");
     if (pathname?.split("/").every((item) => item === "")) {
       contentHeight -= containerToolbarHeight;

@@ -10,7 +10,11 @@ const Tabs = ({ tabs }) => {
     <Container>
       <TabList defaultActiveKey="1" centered onChange={handleChange}>
         {tabs?.map((item) => (
-          <TabPane tab={item?.title} key={item?.title} className="list">
+          <TabPane
+            tab={item?.title}
+            key={~~(Math.random() * 999999)}
+            className="list"
+          >
             {item?.list?.length > 0 ? (
               item?.list?.map((user, index) => (
                 <div className="item">

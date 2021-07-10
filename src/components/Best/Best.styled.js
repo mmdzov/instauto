@@ -5,6 +5,9 @@ export const TabsContainer = styled.div`
     width: 100% !important;
     justify-content: space-between !important;
   }
+  & .ant-tabs {
+    margin-top: -46px;
+  }
   & .ant-tabs > .ant-tabs-nav,
   .ant-tabs > div > .ant-tabs-nav {
     /* position: fixed !important;
@@ -18,6 +21,17 @@ export const TabsContainer = styled.div`
     font-weight: bold;
     width: 17px;
   }
+  & .ant-tabs-nav {
+    position: fixed;
+    right: 0;
+    width: 100%;
+    background: white;
+  }
+
+  & .ant-tabs-content-holder {
+    padding-top: 55px;
+  }
+
   & .ant-tabs-tab {
     margin: 0 !important;
     width: 100% !important;

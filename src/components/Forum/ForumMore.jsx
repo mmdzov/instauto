@@ -8,7 +8,7 @@ import TransferWithinAStationIcon from "@material-ui/icons/TransferWithinAStatio
 import AccessibilityIcon from "@material-ui/icons/Accessibility";
 import GavelIcon from "@material-ui/icons/Gavel";
 import WorkIcon from "@material-ui/icons/Work";
-
+import Discount from "../../assets/Icons/discount.jsx";
 const ForumMore = () => {
   const history = useHistory();
   const [data] = useState([
@@ -55,6 +55,14 @@ const ForumMore = () => {
       token: ~~(Math.random() * 9999999),
     },
     {
+      title: "کد تخفیف",
+      Icon: Discount,
+      svg: true,
+      url: "/discount-code",
+      type: "discountCode",
+      token: ~~(Math.random() * 9999999),
+    },
+    {
       title: "ارتباط با پشتیبانی",
       Icon: PersonOutlineIcon,
       url: "/contact",
@@ -70,6 +78,7 @@ const ForumMore = () => {
     else if (type === "best") return "#8bc34a";
     else if (type === "work") return "#9c27b0";
     else if (type === "auction") return "#4caf50";
+    else if (type === "discountCode") return "#ff9800";
   };
   return (
     <Container>
@@ -82,6 +91,7 @@ const ForumMore = () => {
         >
           <div className="icon">
             <item.Icon />
+            {/* {item?.svg ? <img src={item?.Icon} className="svgVector" alt="" /> : <item.Icon />} */}
           </div>
           <div className="itemTitle">{item?.title}</div>
         </div>

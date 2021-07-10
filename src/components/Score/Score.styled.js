@@ -77,8 +77,15 @@ export const ScoreHeaderContainer = styled.div`
 export const ScoreListContainer = styled.div`
   display: flex;
   padding: 10px 0px;
+  position: relative;
+  margin-top: 5px;
   & .carousel {
     width: 100%;
+  }
+  & .scroll-container {
+    height: 106px;
+    display: flex;
+    align-items: flex-end;
   }
   & .item {
     min-width: 80px;
@@ -90,37 +97,82 @@ export const ScoreListContainer = styled.div`
     padding-bottom: 10px;
     padding: 5px 0px;
     align-items: center;
-    border-radius: 5px;
-    margin: 0px 5px;
+    /* margin: 0px 5px; */
     cursor: pointer;
+    position: relative;
+    & > div {
+      border-radius: 5px;
+      width: 75px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 7px;
+      padding-right: 2px;
+      &.premium {
+        /* border-radius: 100px; */
+        cursor: pointer;
+        color: white;
+        background: linear-gradient(
+          126deg,
+          #f24646,
+          #0c8498,
+          #4311dd,
+          #ad2bdd,
+          #d01386,
+          #4ea513,
+          #5713a5
+        );
+        background-size: 1400% 1400%;
+        -webkit-animation: ${ItemAnimated} 18s ease infinite;
+        -moz-animation: ${ItemAnimated} 18s ease infinite;
+        -o-animation: ${ItemAnimated} 18s ease infinite;
+        animation: ${ItemAnimated} 18s ease infinite;
+      }
+    }
   }
-  & .item.premium {
-    /* border-radius: 100px; */
-    cursor: pointer;
+  & .line {
+    position: absolute;
+    width: 100%;
+    top: -11px;
+    height: 3px;
+    background: #e6e6e6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid black;
+    & .lineBackground {
+      background: rgb(255, 152, 0);
+      width: 100%;
+      position: absolute;
+      height: 3px;
+      left: 0;
+      transition: all 0.2s ease-in-out;
+    }
+    & .arrowDown {
+      width: 0;
+      height: 0;
+      border-left: 15px solid transparent;
+      border-right: 15px solid transparent;
+      border-top: 20px solid #ff9800;
+    }
+  }
+  & .notAwardReceived {
+    background: #f44336;
     color: white;
-    background: linear-gradient(
-      126deg,
-      #f24646,
-      #0c8498,
-      #4311dd,
-      #ad2bdd,
-      #d01386,
-      #4ea513,
-      #5713a5
-    );
-    background-size: 1400% 1400%;
-    -webkit-animation: ${ItemAnimated} 18s ease infinite;
-    -moz-animation: ${ItemAnimated} 18s ease infinite;
-    -o-animation: ${ItemAnimated} 18s ease infinite;
-    animation: ${ItemAnimated} 18s ease infinite;
+  }
+  & .awardReceived {
+    background: #ececec !important;
+    color: #292929 !important;
   }
   & .levelNumber {
     font-size: 1.2rem;
     font-weight: bold;
+    margin-right: 4px;
   }
   & .iconReward {
     height: 30px;
     width: 30px;
+    margin-right: 4px;
     & .gemReward {
       width: inherit;
       height: inherit;
@@ -138,6 +190,7 @@ export const ScoreListContainer = styled.div`
     margin-top: 5px;
     font-size: 0.7rem;
     height: 20px;
+    margin-right: 4px;
     display: flex;
     align-items: center;
     justify-content: center;

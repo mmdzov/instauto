@@ -44,7 +44,7 @@ const ForumUserLevel = () => {
     <Container onClick={() => history.push("/score")} className="premium">
       <div className="progressHeader">
         <div className="progressTitle">
-          سطح شما : <span>{level}</span>
+          سطح فصلی شما : <span>{level}</span>
         </div>
         <div className="" style={{ height: 40 }}>
           {/* <img src={ProfileImage} className="progressImg" alt="" /> */}

@@ -5,7 +5,7 @@ import { Progress } from "antd";
 import { useHistory } from "react-router-dom";
 
 const ScoreHeader = () => {
-  const [level] = useState(34);
+  const [level] = useState(3);
   const [premium] = useState(false);
   const history = useHistory();
   const handlePremiumAccount = () => {
@@ -22,7 +22,7 @@ const ScoreHeader = () => {
       <div className="progress">
         <div className="topBox">
           <div className="title">
-            سطح شما: <span>{level}</span>
+            سطح فصلی شما: <span>{level}</span>
           </div>
           <div className="premiumAccountLink" onClick={handlePremiumAccount}>
             {premium ? "حساب ویژه" : "حسابتو ویژه کن"}

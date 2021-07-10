@@ -46,5 +46,9 @@ export const TransferFormContainer = styled.form`
     grid-gap: 10px;
   }
   & .tip {
+    font-size: 0.7rem;
+    margin-top: -7px;
+    margin-right: 5px;
+    color: #989898;
   }
 `;

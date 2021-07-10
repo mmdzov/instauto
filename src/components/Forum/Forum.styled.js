@@ -155,6 +155,11 @@ export const ForumMoreContainer = styled.div`
       height: 28px;
       margin-left: 5px;
     }
+    & .svgVector {
+      width: 27px;
+      height: 27px;
+      margin-right: -1px;
+    }
     & .itemTitle {
     }
   }

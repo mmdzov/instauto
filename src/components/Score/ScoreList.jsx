@@ -1,11 +1,14 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState } from "react";
 import { ScoreListContainer as Container } from "./Score.styled";
-import Gem from "../../assets/images/icons8-jewel-48.png";
-import Gold from "../../assets/Icons/CoinRewardIcon.svg";
-import Lucky from "../../assets/images/fortune-wheel.png";
-import Flickity from "react-flickity-component";
+
 import { useHistory } from "react-router-dom";
+import useDevice from "../../hooks/useDevice";
+import ScoreListDesktop from "./ScoreListDesktop";
+import ScoreListMobile from "./ScoreListMobile";
+
 const ScoreList = () => {
+  const [level] = useState(3);
+  const [completedLevel] = useState(70);
   const [data] = useState([
     { level: 1, reward: "gold", amount: "200" },
     { level: 2, reward: "lucky", amount: "2", premium: true },
@@ -28,66 +31,50 @@ const ScoreList = () => {
     { level: 19, reward: "gold", amount: "100" },
     { level: 20, reward: "lucky", amount: "5", premium: true },
   ]);
+  const [awards, setAwards] = useState([
+    { level: 1, received: false },
+    { level: 2, received: false },
+    { level: 3, received: true },
+  ]);
+
   const history = useHistory();
   const handleClickItem = (item) => {
-    console.log(item);
-    if (item?.level > 34) return;
+    if (item?.level > level) return;
     if (item?.reward === "lucky") {
       history.push("/luckywheel");
     }
-  };
-  const [focused, setFocused] = useState(false);
-  const handleDownPointer = useCallback((e) => {
-    setFocused(Date.now());
-  }, []);
-  const handleUpPointer = (e, item) => {
-    const now = Date.now();
-    if (now - focused <= 180) {
-      handleClickItem(item);
+    if (item.level <= level) {
+      const index = awards.findIndex((t) => t?.level === item?.level);
+      const received = awards[index]?.received;
+      if (received === false) {
+        const awds = [...awards];
+        awds[index].received = true;
+        setAwards(awds);
+        //request to server for received reward item and cache to redux
+      } else if (received === true) {
+        return;
+      }
     }
+    // for (let i of data) {
+    // }
   };
+  const mobile = useDevice();
+
   return (
     <Container className="">
-      <Flickity
-        className={"carousel"}
-        elementType={"div"}
-        options={{
-          freeScroll: true,
-          prevNextButtons: false,
-          contain: true,
-          pageDots: false,
-          rightToLeft: true,
-          freeScrollFriction: 0.03,
-          cellAlign: "right",
-          // draggable: false,
-        }}
-        // reloadOnUpdate
-        static
-      >
-        {data?.map((item) => (
-          <div
-            className={`item ${item?.premium ? "premium" : ""}`}
-            // onClick={() => handleClickItem(item)}
-            key={item?.level}
-            onPointerUp={(e) => handleUpPointer(e, item)}
-            onPointerDown={handleDownPointer}
-          >
-            <div className="levelNumber">{item?.level}</div>
-            <div className="iconReward">
-              {item?.reward === "gem" ? (
-                <img src={Gem} className="gemReward" alt="" />
-              ) : item?.reward === "gold" ? (
-                <img src={Gold} className="goldReward" alt="" />
-              ) : item?.reward === "lucky" ? (
-                <img src={Lucky} alt="" className="luckyReward" />
-              ) : item?.reward === "empty" ? null : (
-                item?.reward
-              )}
-            </div>
-            <div className="amount">{item?.amount}</div>
-          </div>
-        ))}
-      </Flickity>
+      <div className="line" style={{ top: "11px" }}></div>
+      {mobile ? (
+        <ScoreListMobile
+          clickItem={handleClickItem}
+          data={data}
+          completedLevel={completedLevel}
+          level={level}
+          awards={awards}
+        />
+      ) : null}
+      {/* (
+        <ScoreListDesktop clickItem={handleClickItem} data={data} />
+      ) */}
     </Container>
   );
 };

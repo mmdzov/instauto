@@ -51,7 +51,13 @@ const Best = () => {
     },
   ]);
   return (
-    <div className="container">
+    <div
+      className="container"
+      style={{
+        marginTop: 46,
+        // height: 474
+      }}
+    >
       <Tabs tabs={tabs} />
     </div>
   );

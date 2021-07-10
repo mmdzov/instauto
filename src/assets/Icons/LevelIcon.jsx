@@ -10,7 +10,7 @@ const LevelIcon = () => {
       width="40"
       height="40"
       viewBox="0 0 283.465 283.465"
-      enable-background="new 0 0 283.465 283.465"
+      enableBackground="new 0 0 283.465 283.465"
       xmlSpace="preserve"
     >
       <g>
