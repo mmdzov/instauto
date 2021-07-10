@@ -8,7 +8,16 @@ import CoinIconLarge from "../../assets/Icons/CoinIconLarge";
 import useDevice from "../../hooks/useDevice";
 import { useHistory } from "react-router-dom";
 import Gem from "../../assets/images/icons8-jewel-48.png";
+import PersonOutlineIcon from "@material-ui/icons/PersonOutline";
+import StoreFrontIcon from "@material-ui/icons/Storefront";
+import CompareArrowsIcon from "@material-ui/icons/CompareArrows";
+import TransferWithinAStationIcon from "@material-ui/icons/TransferWithinAStation";
+import AccessibilityIcon from "@material-ui/icons/Accessibility";
+import GavelIcon from "@material-ui/icons/Gavel";
+import WorkIcon from "@material-ui/icons/Work";
+import { PercentageOutlined, MessageOutlined } from "@ant-design/icons";
 const { SubMenu } = Menu;
+
 const Navigation = () => {
   const menuRef = useRef();
   const [openMenu, setOpenMenu] = useState(false);
@@ -30,9 +39,86 @@ const Navigation = () => {
     setOpenMenu((prev) => !prev);
   };
   const history = useHistory();
-  const mobile = useDevice();
+  const [data] = useState([
+    {
+      title: "پیغام ها",
+      Icon: MessageOutlined,
+      url: "/messages",
+      type: "messages",
+      token: ~~(Math.random() * 9999999),
+      unread: 88,
+    },
+    {
+      title: "فروشگاه",
+      Icon: StoreFrontIcon,
+      url: "/store",
+      type: "store",
+      token: ~~(Math.random() * 9999999),
+      unread: false,
+    },
+    {
+      title: "تبدیل سکه",
+      Icon: CompareArrowsIcon,
+      url: "/convert",
+      type: "convert",
+      token: ~~(Math.random() * 9999999),
+      unread: false,
+    },
+    {
+      title: "انتقال سکه",
+      Icon: TransferWithinAStationIcon,
+      url: "/transfer",
+      type: "transfer",
+      token: ~~(Math.random() * 9999999),
+      unread: false,
+    },
+    {
+      title: "برترین افراد",
+      Icon: AccessibilityIcon,
+      url: "/best",
+      type: "best",
+      token: ~~(Math.random() * 9999999),
+      unread: false,
+    },
+    {
+      title: "حراج و مزایده دارایی ها",
+      Icon: GavelIcon,
+      url: "/auction",
+      type: "auction",
+      token: ~~(Math.random() * 9999999),
+      unread: false,
+    },
+    {
+      title: "کسب و کار شما",
+      Icon: WorkIcon,
+      url: "/work",
+      type: "work",
+      token: ~~(Math.random() * 9999999),
+      unread: false,
+    },
+    {
+      title: "کد تخفیف",
+      Icon: PercentageOutlined,
+      svg: true,
+      url: "/discount-code",
+      type: "discountCode",
+      token: ~~(Math.random() * 9999999),
+      unread: false,
+    },
+    {
+      title: "ارتباط با پشتیبانی",
+      Icon: PersonOutlineIcon,
+      url: "/contact",
+      type: "contact",
+      token: ~~(Math.random() * 9999999),
+      unread: false,
+    },
+  ]);
+  const [unread] = useState(true);
   return (
     <Container className="navContainer">
+      {unread ? <div className="unread"></div> : null}
+      {openMenu ? <div className="blur" onClick={handleOpenMenu}></div> : null}
       <div
         onClick={() => history.push(`/profile/mmdzov`)}
         className=""
@@ -73,18 +159,18 @@ const Navigation = () => {
             }}
           />
         </div>
-        {!mobile ? (
-          <div className="menuicon" onClick={handleOpenMenu}>
-            <MenuIcon />
-          </div>
-        ) : null}
+        {/* {!mobile ? ( */}
+        <div className="menuicon" onClick={handleOpenMenu}>
+          <MenuIcon />
+        </div>
+        {/* ) : null} */}
       </div>
       <Menu
         ref={menuRef}
         style={{
           width: 256,
           position: "fixed",
-          right: openMenu ? "0" : "-1000%",
+          right: openMenu ? "0" : "-100%",
           transition: "all .4s ease-in-out",
           top: 0,
           height: "100%",
@@ -107,11 +193,29 @@ const Navigation = () => {
               <CloseIcon />
             </div>
           </div>
-          <div className="" style={{ width: "fit-content", marginTop: "20px" }}>
+          <div className="" style={{ width: "fit-content", marginTop: "10px" }}>
             <CoinIconLarge />
           </div>
         </div>
-        <Menu.Item key="1">اصلی</Menu.Item>
+        {data.map((item) => (
+          <Menu.Item
+            className="item"
+            // style={{ background: handleBackground(item?.type) }}
+            key={item?.token}
+            onClick={() => history.push(item?.url)}
+          >
+            <div className="itemContainer">
+              {item?.unread ? (
+                <div className="itemUnread">{item?.unread}</div>
+              ) : null}
+              <div className="icon">
+                <item.Icon />
+                {/* {item?.svg ? <img src={item?.Icon} className="svgVector" alt="" /> : <item.Icon />} */}
+              </div>
+              <div className="itemTitle">{item?.title}</div>
+            </div>
+          </Menu.Item>
+        ))}
       </Menu>
     </Container>
   );

@@ -10,7 +10,7 @@ const Forum = () => {
     <Container className="container">
       {/* <ForumTop /> */}
       <ForumUserLevel />
-      <ForumMore />
+      {/* <ForumMore /> */}
       <ForumSuggestYou />
       <ForumSuggest />
       {/* <ForumBest /> */}

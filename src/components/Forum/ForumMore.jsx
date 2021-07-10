@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { ForumMoreContainer as Container } from "./Forum.styled";
-import StoreFrontIcon from "@material-ui/icons/Storefront";
-import PersonOutlineIcon from "@material-ui/icons/PersonOutline";
 import { useHistory } from "react-router-dom";
+import PersonOutlineIcon from "@material-ui/icons/PersonOutline";
+import StoreFrontIcon from "@material-ui/icons/Storefront";
 import CompareArrowsIcon from "@material-ui/icons/CompareArrows";
 import TransferWithinAStationIcon from "@material-ui/icons/TransferWithinAStation";
 import AccessibilityIcon from "@material-ui/icons/Accessibility";

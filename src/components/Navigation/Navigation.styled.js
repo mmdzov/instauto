@@ -1,4 +1,13 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const BlurAnimate = keyframes`
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+`;
 
 export const Container = styled.nav`
   display: flex;
@@ -10,6 +19,7 @@ export const Container = styled.nav`
   box-shadow: 0 5px 9px -6px #8e8e8e;
   position: sticky;
   top: 0;
+  z-index: 9;
   & .username {
     padding-left: 10px;
     cursor: pointer;
@@ -27,6 +37,7 @@ export const Container = styled.nav`
   }
   & .menuicon {
     height: 24px;
+    margin-left: 5px;
     cursor: pointer;
     & > svg {
     }
@@ -41,14 +52,14 @@ export const Container = styled.nav`
       display: flex;
       justify-content: space-between;
       padding: 0 15px;
-      height: 35px;
+      height: 45px;
       align-items: center;
       width: 100%;
+      line-height: 10px;
       & div:first-of-type {
-        line-height: 30px;
+        line-height: 40px;
         height: 100%;
         font-size: 1.1rem;
-        font-weight: bold;
       }
     }
   }
@@ -57,6 +68,70 @@ export const Container = styled.nav`
   .ant-menu-vertical-right .ant-menu-item:not(:last-child),
   .ant-menu-inline .ant-menu-item:not(:last-child) {
     margin-bottom: 0;
+  }
+  & .itemContainer {
+    display: flex;
+    align-items: center;
+    position: relative;
+    & .icon {
+      display: flex;
+      margin-bottom: 5px;
+    }
+    & .itemTitle {
+      margin-right: 5px;
+    }
+    & .itemUnread {
+      position: absolute;
+      left: 8px;
+      width: 20px;
+      height: 20px;
+      background: #ff5f5f;
+      border-radius: 100px;
+      top: 9px;
+      z-index: 2;
+      cursor: pointer;
+      color: white;
+      font-size: 0.8rem;
+      font-weight: bold;
+      text-align: center;
+      line-height: 23px;
+    }
+  }
+  & .ant-menu {
+    z-index: 9;
+  }
+  & .ant-menu-item {
+    padding: 0 15px !important;
+  }
+  & .anticon {
+    margin-right: 5px !important;
+    margin-left: 4px !important;
+    & svg {
+      font-size: 1.3rem;
+      margin-right: -4px;
+    }
+  }
+  & .blur {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    animation: ${BlurAnimate} 1s alternate;
+    transition: all 1s ease-in-out;
+    top: 0;
+    cursor: pointer;
+    background: #00000059;
+  }
+  & .unread {
+    position: absolute;
+    right: 8px;
+    width: 7px;
+    height: 7px;
+    background: red;
+    border-radius: 100px;
+    top: 14px;
+    z-index: 2;
+    cursor: pointer;
   }
 `;
 export const SimpleNavContainer = styled.div`
