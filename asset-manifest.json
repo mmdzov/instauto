@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/instauto/static/css/main.cfa73252.chunk.css",
+    "main.js": "/instauto/static/js/main.ef2ac3ed.chunk.js",
+    "main.js.map": "/instauto/static/js/main.ef2ac3ed.chunk.js.map",
+    "runtime-main.js": "/instauto/static/js/runtime-main.da7db040.js",
+    "runtime-main.js.map": "/instauto/static/js/runtime-main.da7db040.js.map",
+    "static/css/2.ba8a8a05.chunk.css": "/instauto/static/css/2.ba8a8a05.chunk.css",
+    "static/js/2.80b91de5.chunk.js": "/instauto/static/js/2.80b91de5.chunk.js",
+    "static/js/2.80b91de5.chunk.js.map": "/instauto/static/js/2.80b91de5.chunk.js.map",
+    "static/js/3.804745a3.chunk.js": "/instauto/static/js/3.804745a3.chunk.js",
+    "static/js/3.804745a3.chunk.js.map": "/instauto/static/js/3.804745a3.chunk.js.map",
+    "index.html": "/instauto/index.html",
+    "static/css/2.ba8a8a05.chunk.css.map": "/instauto/static/css/2.ba8a8a05.chunk.css.map",
+    "static/css/main.cfa73252.chunk.css.map": "/instauto/static/css/main.cfa73252.chunk.css.map",
+    "static/js/2.80b91de5.chunk.js.LICENSE.txt": "/instauto/static/js/2.80b91de5.chunk.js.LICENSE.txt",
+    "static/media/CoinRewardIcon.96a17bbd.svg": "/instauto/static/media/CoinRewardIcon.96a17bbd.svg",
+    "static/media/index.css": "/instauto/static/media/Samim.c32a1ec5.eot",
+    "static/media/avatar.56ad4e2f.jpg": "/instauto/static/media/avatar.56ad4e2f.jpg",
+    "static/media/fortune-wheel.9da56e7e.png": "/instauto/static/media/fortune-wheel.9da56e7e.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.da7db040.js",
+    "static/css/2.ba8a8a05.chunk.css",
+    "static/js/2.80b91de5.chunk.js",
+    "static/css/main.cfa73252.chunk.css",
+    "static/js/main.ef2ac3ed.chunk.js"
+  ]
+}
