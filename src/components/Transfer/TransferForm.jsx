@@ -7,17 +7,14 @@ const TransferForm = () => {
   const [uid, setUid] = useState("");
   const handleChange = (e) => {
     const { value, name } = e.target;
-    if (/[0-9]/g.test(value) || value === "") {
-      setValue(value);
-    }
+    const filtered = value.match(/[0-9]/g);
+    setValue(filtered?.join("") || "");
   };
   const handleChangeUid = (e) => {
     const { value, name } = e.target;
-    console.log(value.length, name);
-    if (
-      (name === "userId" && /[0-9]/g.test(value) && value.length <= 9) ||
-      value === ""
-    ) {
+    const filtered = value.match(/[0-9]/g);
+    const uidFiltered = filtered?.join("") || "";
+    if (name === "userId" && uidFiltered && value.length <= 9) {
       setUid(value);
     }
   };

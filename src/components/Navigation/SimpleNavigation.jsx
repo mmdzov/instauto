@@ -18,6 +18,7 @@ const SimpleNavigation = () => {
     else if (path.includes("transfer")) setTitle("انتقال سکه");
     else if (path.includes("best")) setTitle("برترین افراد");
     else if (path.includes("order") && token) setTitle(`سفارشات شما`);
+    else if (path.includes("discount-code")) setTitle(`کد تخفیف`);
     else if (path.includes("order") && path.includes("new"))
       setTitle("سفارش جدید");
     else if (path.includes("order") && path.includes("special"))

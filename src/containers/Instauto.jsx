@@ -13,6 +13,7 @@ import SingleOrder from "../pages/SingleOrder/SingleOrder";
 import Convert from "../pages/Convert/Convert";
 import Transfer from "../pages/Transfer/Transfer";
 import Best from "../pages/Best/Best";
+import DiscountCode from "../pages/DiscountCode/DiscountCode";
 
 const Instauto = () => {
   return (
@@ -34,6 +35,7 @@ const Instauto = () => {
           "/order",
           "/order/:token/:order",
           "/order/:token",
+          "/discount-code",
         ]}
         exact
       >
@@ -48,6 +50,7 @@ const Instauto = () => {
           <Route path="/order" exact component={Order} />
           <Route path="/order/:token/:order" exact component={SingleOrder} />
           <Route path="/order/:token" component={OrderTracking} />
+          <Route path="/discount-code" component={DiscountCode} />
         </MainLayout>
       </Route>
       <Route path={["/forum"]} exact>

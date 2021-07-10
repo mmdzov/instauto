@@ -10,13 +10,8 @@ const ConvertForm = ({
 }) => {
   const handleChange = (e) => {
     const { value } = e.target;
-    if (/[0-9]/g.test(value) || value === "") {
-      //   if (convertSwitch && +value <= 10) {
-      setCount(value);
-      //   } else if (!convertSwitch && +value <= 1200) {
-      // setCount(value);
-      //   }
-    }
+    const filtered = value.match(/[0-9]/g);
+    setCount(filtered?.join("") || "");
   };
   return (
     <Container onSubmit={(e) => e.preventDefault()}>
