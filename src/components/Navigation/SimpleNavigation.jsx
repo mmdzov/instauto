@@ -20,6 +20,8 @@ const SimpleNavigation = () => {
     else if (path.includes("order") && token) setTitle(`سفارشات شما`);
     else if (path.includes("discount-code")) setTitle(`کد تخفیف`);
     else if (path.includes("explore")) setTitle(`کاوش کردن`);
+    else if (path.includes("lottery") && path.includes("add"))
+      setTitle(`ایجاد قرعه کشی`);
     else if (path.includes("lottery")) setTitle(`قرعه کشی`);
     else if (path.includes("messages")) setTitle(`پیغام ها`);
     else if (path.includes("order") && path.includes("new"))

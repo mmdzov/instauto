@@ -7,9 +7,13 @@ import {
 import Avatar from "../../assets/images/avatar.jpg";
 import { Fragment, useState } from "react";
 import { Input } from "antd";
+import { useSelector } from "react-redux";
+import { useHistory } from "react-router-dom";
 const { Search } = Input;
 
 const LotteryList = () => {
+  const { list } = useSelector(({ lottery }) => lottery);
+  const history = useHistory();
   const [enableSearch, setEnableSearch] = useState(false);
   const closeSearch = () => {
     setEnableSearch(false);
@@ -29,7 +33,11 @@ const LotteryList = () => {
               >
                 <SearchOutlined />
               </div>
-              <div className="plus" style={{ color: "#2196f3" }}>
+              <div
+                className="plus"
+                style={{ color: "#2196f3" }}
+                onClick={() => history.push("/lottery/add/1")}
+              >
                 <PlusCircleOutlined />
               </div>
             </div>
@@ -44,24 +52,23 @@ const LotteryList = () => {
         )}
       </div>
       <div className="list">
-        <div className="item">
-          <img src={Avatar} alt="" />
-          <div className="middle">
-            <div className="title">قرعه کشی جدید</div>
-            <div className="caption">
-              دارای جوایز ویژه. ده نفر انتخاب میشوند و جوایز را دریافت میکنند
-              جایزه نفر اول یک میلیون تومان پول نقد است
-            </div>
-            <div className="dates">
-              <div className="">
-                تاریخ شروع : <span>1400/4/30</span>
-              </div>
-              <div className="">
-                زمان قرعه کشی : <span>1400/4/30</span>
+        {list.map((item) => (
+          <div className="item">
+            <img src={item.image} alt="" />
+            <div className="middle">
+              <div className="title">{item.title}</div>
+              <div className="caption">{item.caption}</div>
+              <div className="dates">
+                <div className="">
+                  تاریخ شروع : <span>{item.startDate}</span>
+                </div>
+                <div className="">
+                  زمان قرعه کشی : <span>{item.expDate}</span>
+                </div>
               </div>
             </div>
           </div>
-        </div>
+        ))}
       </div>
     </Container>
   );

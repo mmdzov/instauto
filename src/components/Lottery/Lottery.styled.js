@@ -33,6 +33,9 @@ export const LotteryModeContainer = styled.div`
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  position: fixed;
+  width: 100%;
+  top: 0;
   & .btn {
     margin: 9px 0px;
     height: 45px;

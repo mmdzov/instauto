@@ -19,6 +19,9 @@ import { useEffect } from "react";
 import userService from "../api/userService";
 import Explore from "../pages/Explore/Explore";
 import Lottery from "../pages/Lottery/Lottery";
+import AddLottery from "../pages/AddLottery/AddLottery";
+import LotteryCreateMode from "../pages/AddLottery/LotteryCreateMode";
+import LotteryJoinMode from "../pages/AddLottery/LotteryJoinMode";
 const Instauto = () => {
   const getData = async () => {};
   useEffect(() => {
@@ -54,10 +57,26 @@ const Instauto = () => {
           "/messages",
           "/explore",
           "/lottery",
+          "/lottery/add",
+          "/lottery/add/:token",
+          "/lottery/add/:token/create",
+          "/lottery/add/:token/join",
         ]}
         exact
       >
         <MainLayout topNav={false}>
+          <Route
+            path="/lottery/add/:token/join"
+            exact
+            component={LotteryJoinMode}
+          />
+          <Route
+            path="/lottery/add/:token/create"
+            exact
+            component={LotteryCreateMode}
+          />
+          <Route path="/lottery/add/:token" exact component={AddLottery} />
+          <Route path="/lottery/add" exact component={AddLottery} />
           <Route path="/lottery" exact component={Lottery} />
           <Route path="/explore" exact component={Explore} />
           <Route path="/setting" exact component={Setting} />
