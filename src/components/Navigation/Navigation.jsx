@@ -15,7 +15,13 @@ import TransferWithinAStationIcon from "@material-ui/icons/TransferWithinAStatio
 import AccessibilityIcon from "@material-ui/icons/Accessibility";
 import GavelIcon from "@material-ui/icons/Gavel";
 import WorkIcon from "@material-ui/icons/Work";
-import { PercentageOutlined, MessageOutlined } from "@ant-design/icons";
+import InboxIcon from "@material-ui/icons/Inbox";
+import {
+  PercentageOutlined,
+  MessageOutlined,
+  ShakeOutlined,
+} from "@ant-design/icons";
+
 const { SubMenu } = Menu;
 
 const Navigation = () => {
@@ -47,6 +53,22 @@ const Navigation = () => {
       type: "messages",
       token: ~~(Math.random() * 9999999),
       unread: 88,
+    },
+    {
+      title: "قرعه کشی",
+      Icon: ShakeOutlined,
+      url: "/lottery",
+      type: "lottery",
+      token: ~~(Math.random() * 9999999),
+      unread: false,
+    },
+    {
+      title: "سفارشات",
+      Icon: InboxIcon,
+      url: "/order/mmdzov",
+      type: "order",
+      token: ~~(Math.random() * 9999999),
+      unread: false,
     },
     {
       title: "فروشگاه",

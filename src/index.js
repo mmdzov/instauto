@@ -4,10 +4,14 @@ import "./index.css";
 import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { ConfigProvider } from "antd";
+import { Provider } from "react-redux";
+import store from "./store/index";
 ReactDOM.render(
-  <ConfigProvider direction="rtl">
-    <App />
-  </ConfigProvider>,
+  <Provider store={store}>
+    <ConfigProvider direction="rtl">
+      <App />
+    </ConfigProvider>
+  </Provider>,
   document.getElementById("root")
 );
 

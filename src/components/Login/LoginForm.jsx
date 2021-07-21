@@ -3,16 +3,19 @@ import { Input, Space } from "antd";
 import { EyeInvisibleOutlined, EyeTwoTone } from "@ant-design/icons";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { setLoginUser } from "../../store/actions/userAction";
 
 const LoginForm = () => {
   const [fields, setFields] = useState({ username: "", password: "" });
+  const history = useHistory();
   const handleChangeFields = (e) => {
     const { name, value } = e.target;
-    setFields({ [name]: value });
+    setFields((prev) => ({ ...prev, [name]: value }));
   };
-  const history = useHistory();
-  const handleSubmit = () => {
-    history.replace("/");
+  const dispatch = useDispatch();
+  const handleSubmit = async () => {
+    await dispatch(setLoginUser(fields.username, fields.password, history));
   };
   return (
     <Container className="" onSubmit={(e) => e.preventDefault()}>

@@ -14,13 +14,28 @@ import Convert from "../pages/Convert/Convert";
 import Transfer from "../pages/Transfer/Transfer";
 import Best from "../pages/Best/Best";
 import DiscountCode from "../pages/DiscountCode/DiscountCode";
-
+import Messages from "../pages/Messages/Messages";
+import { useEffect } from "react";
+import userService from "../api/userService";
+import Explore from "../pages/Explore/Explore";
+import Lottery from "../pages/Lottery/Lottery";
 const Instauto = () => {
+  const getData = async () => {};
+  useEffect(() => {
+    getData();
+  }, []);
   return (
     <Switch>
-      <Route path={["/"]} exact>
+      <Route
+        path={["/", "/like-post", "/story", "/comment-like", "/comment-post"]}
+        exact
+      >
         <MainLayout main>
           <Route path="/" exact component={Home} />
+          <Route path="/like-post" exact component={Home} />
+          <Route path="/comment-post" exact component={Home} />
+          <Route path="/comment-like" exact component={Home} />
+          {/* <Route path="/story" exact component={Home} /> */}
         </MainLayout>
       </Route>
       <Route
@@ -36,10 +51,15 @@ const Instauto = () => {
           "/order/:token/:order",
           "/order/:token",
           "/discount-code",
+          "/messages",
+          "/explore",
+          "/lottery",
         ]}
         exact
       >
         <MainLayout topNav={false}>
+          <Route path="/lottery" exact component={Lottery} />
+          <Route path="/explore" exact component={Explore} />
           <Route path="/setting" exact component={Setting} />
           <Route path="/score" exact component={Score} />
           <Route path="/luckywheel" exact component={LuckyWheel} />
@@ -51,6 +71,7 @@ const Instauto = () => {
           <Route path="/order/:token/:order" exact component={SingleOrder} />
           <Route path="/order/:token" component={OrderTracking} />
           <Route path="/discount-code" component={DiscountCode} />
+          <Route path="/messages" component={Messages} />
         </MainLayout>
       </Route>
       <Route path={["/forum"]} exact>

@@ -1,0 +1,70 @@
+import { LotteryListContainer as Container } from "./Lottery.styled";
+import {
+  PlusCircleOutlined,
+  SearchOutlined,
+  CloseOutlined,
+} from "@ant-design/icons";
+import Avatar from "../../assets/images/avatar.jpg";
+import { Fragment, useState } from "react";
+import { Input } from "antd";
+const { Search } = Input;
+
+const LotteryList = () => {
+  const [enableSearch, setEnableSearch] = useState(false);
+  const closeSearch = () => {
+    setEnableSearch(false);
+    // console.log("closed");
+  };
+  return (
+    <Container className="">
+      <div className="header">
+        {!enableSearch ? (
+          <Fragment>
+            <div className="title">همه قرعه کشی ها</div>
+            <div className="icons">
+              <div
+                className="plus"
+                style={{ color: "#ccc" }}
+                onClick={() => setEnableSearch(true)}
+              >
+                <SearchOutlined />
+              </div>
+              <div className="plus" style={{ color: "#2196f3" }}>
+                <PlusCircleOutlined />
+              </div>
+            </div>
+          </Fragment>
+        ) : (
+          <form action="" onSubmit={(e) => e.preventDefault()}>
+            <div className="" onClick={closeSearch}>
+              <CloseOutlined />
+            </div>
+            <Search placeholder="جستجو کنید..." loading={false} enterButton />
+          </form>
+        )}
+      </div>
+      <div className="list">
+        <div className="item">
+          <img src={Avatar} alt="" />
+          <div className="middle">
+            <div className="title">قرعه کشی جدید</div>
+            <div className="caption">
+              دارای جوایز ویژه. ده نفر انتخاب میشوند و جوایز را دریافت میکنند
+              جایزه نفر اول یک میلیون تومان پول نقد است
+            </div>
+            <div className="dates">
+              <div className="">
+                تاریخ شروع : <span>1400/4/30</span>
+              </div>
+              <div className="">
+                زمان قرعه کشی : <span>1400/4/30</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </Container>
+  );
+};
+
+export default LotteryList;

@@ -6,29 +6,37 @@ import WhatshotIcon from "@material-ui/icons/Whatshot";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import AddIcon from "@material-ui/icons/Add";
-import InboxIcon from "@material-ui/icons/Inbox";
 import PublicIcon from "@material-ui/icons/Public";
+import ExploreOutlinedIcon from "@material-ui/icons/ExploreOutlined";
+import { CoffeeOutlined } from "@ant-design/icons";
+import SettingsOutlinedIcon from "@material-ui/icons/SettingsOutlined";
+import HomeOutlinedIcon from "@material-ui/icons/HomeOutlined";
 
 const BottomNavigation = () => {
   const [label] = useState(true);
   const [list] = useState([
-    { label: "اصلی", Icon: HomeIcon, url: "/", centered: false },
+    { label: "خانه", Icon: HomeOutlinedIcon, url: "/", centered: false },
     {
-      label: "تالار",
-      Icon: PublicIcon,
-      url: `/forum`,
+      label: "کاوشگری",
+      Icon: ExploreOutlinedIcon,
+      url: `/explore`,
       centered: false,
     },
+
     { label: "", Icon: AddIcon, url: "/store", centered: true },
     { label: "", Icon: null, url: "", centered: false },
     {
-      label: "سفارشات",
-      Icon: InboxIcon,
-      url: "/order/mmdzov",
+      label: "تالار",
+      Icon: CoffeeOutlined,
+      url: `/forum`,
       centered: false,
-      // color: "#ff4c4c",
     },
-    { label: "تنظیمات", Icon: SettingsIcon, url: "/setting", centered: false },
+    {
+      label: "تنظیمات",
+      Icon: SettingsOutlinedIcon,
+      url: "/setting",
+      centered: false,
+    },
   ]);
   const history = useHistory();
   const handleGo = (path) => {

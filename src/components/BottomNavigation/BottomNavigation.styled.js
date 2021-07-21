@@ -19,8 +19,11 @@ export const Container = styled.div`
     color: #3c3c3c;
     padding: 5px 0px;
     cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     & .icon {
-      & > svg {
+      & svg {
         font-size: 2rem;
       }
     }
@@ -36,6 +39,7 @@ export const Container = styled.div`
       color: white;
       border-radius: 100px;
       display: flex;
+      flex-direction: row-reverse;
       align-items: center;
       justify-content: center;
       border: 12px solid #f3f3f3;

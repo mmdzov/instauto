@@ -1,7 +1,7 @@
 import { ConvertHeaderContainer as Container } from "./Convert.styled";
 import { useState } from "react";
 import { Alert } from "antd";
-
+import Switch from "../Switch/Switch";
 const ConvertHeader = ({ setCount, convertSwitch, setSwitch = () => {} }) => {
   const [alert] = useState({
     title: "توجه!",
@@ -20,20 +20,13 @@ const ConvertHeader = ({ setCount, convertSwitch, setSwitch = () => {} }) => {
         type="info"
         showIcon
       />
-      <div className="convertButton">
-        <div
-          className={convertSwitch ? "active" : ""}
-          onClick={handleChangeSwitch}
-        >
-          سکه به الماس
-        </div>
-        <div
-          className={!convertSwitch ? "active" : ""}
-          onClick={handleChangeSwitch}
-        >
-          الماس به سکه
-        </div>
-      </div>
+      <Switch
+        setSwitch={setSwitch}
+        switchValue={convertSwitch}
+        title1="سکه به الماس"
+        title2="الماس به سکه"
+        afterChange={() => setCount("")}
+      />
     </Container>
   );
 };

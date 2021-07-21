@@ -30,9 +30,9 @@ const MainLayout = ({ main = false, topNav = true, children }) => {
       contentHeight -= antTabNav;
     }
     c?.classList?.add("normalHeight");
-    if (pathname?.split("/").every((item) => item === "")) {
-      contentHeight -= containerToolbarHeight;
-    }
+    // if (pathname?.split("/").every((item) => item === "")) {
+    //   contentHeight -= containerToolbarHeight;
+    // }
     setContentHeight(contentHeight);
   }
   useEffect(() => {
@@ -41,7 +41,7 @@ const MainLayout = ({ main = false, topNav = true, children }) => {
   return (
     <Container mobile={mobile} h={contentHeight}>
       {topNav ? <Navigation /> : <SimpleNavigation />}
-      {main ? <MainToolbar /> : null}
+      {/* {main ? <MainToolbar /> : null} */}
       {children}
       {mobile ? <BottomNavigation /> : null}
     </Container>

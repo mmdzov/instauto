@@ -1,6 +1,9 @@
+import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
 import Logo from "../../assets/images/logo.png";
 import LoginForm from "../../components/Login/LoginForm";
+import { setLoginUser } from "../../store/actions/userAction";
 
 const Login = () => {
   return (

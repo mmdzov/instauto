@@ -19,6 +19,9 @@ const SimpleNavigation = () => {
     else if (path.includes("best")) setTitle("برترین افراد");
     else if (path.includes("order") && token) setTitle(`سفارشات شما`);
     else if (path.includes("discount-code")) setTitle(`کد تخفیف`);
+    else if (path.includes("explore")) setTitle(`کاوش کردن`);
+    else if (path.includes("lottery")) setTitle(`قرعه کشی`);
+    else if (path.includes("messages")) setTitle(`پیغام ها`);
     else if (path.includes("order") && path.includes("new"))
       setTitle("سفارش جدید");
     else if (path.includes("order") && path.includes("special"))

@@ -3,6 +3,7 @@ import Flickity from "react-flickity-component";
 import Gem from "../../assets/images/icons8-jewel-48.png";
 import Gold from "../../assets/Icons/CoinRewardIcon.svg";
 import Lucky from "../../assets/images/fortune-wheel.png";
+import Slider from "../Slider/Slider";
 
 const ScoreListDesktop = ({ clickItem, data = [] }) => {
   const [focused, setFocused] = useState(false);
@@ -16,22 +17,7 @@ const ScoreListDesktop = ({ clickItem, data = [] }) => {
     }
   };
   return (
-    <Flickity
-      className={"carousel"}
-      elementType={"div"}
-      options={{
-        freeScroll: true,
-        prevNextButtons: false,
-        contain: true,
-        pageDots: false,
-        rightToLeft: true,
-        freeScrollFriction: 0.03,
-        cellAlign: "right",
-        // draggable: false,
-      }}
-      reloadOnUpdate
-      static
-    >
+    <Slider>
       {data?.map((item) => (
         <div
           className="item"
@@ -72,7 +58,7 @@ const ScoreListDesktop = ({ clickItem, data = [] }) => {
           </div>
         </div>
       ))}
-    </Flickity>
+    </Slider>
   );
 };
 
