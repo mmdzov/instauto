@@ -57,26 +57,12 @@ const Instauto = () => {
           "/messages",
           "/explore",
           "/lottery",
-          "/lottery/add",
-          "/lottery/add/:token",
-          "/lottery/add/:token/create",
-          "/lottery/add/:token/join",
+          "/lottery/new",
         ]}
         exact
       >
         <MainLayout topNav={false}>
-          <Route
-            path="/lottery/add/:token/join"
-            exact
-            component={LotteryJoinMode}
-          />
-          <Route
-            path="/lottery/add/:token/create"
-            exact
-            component={LotteryCreateMode}
-          />
-          <Route path="/lottery/add/:token" exact component={AddLottery} />
-          <Route path="/lottery/add" exact component={AddLottery} />
+          <Route path="/lottery/new" exact component={LotteryCreateMode} />
           <Route path="/lottery" exact component={Lottery} />
           <Route path="/explore" exact component={Explore} />
           <Route path="/setting" exact component={Setting} />

@@ -36,7 +36,7 @@ const LotteryList = () => {
               <div
                 className="plus"
                 style={{ color: "#2196f3" }}
-                onClick={() => history.push("/lottery/add/1")}
+                onClick={() => history.push("/lottery/new")}
               >
                 <PlusCircleOutlined />
               </div>
