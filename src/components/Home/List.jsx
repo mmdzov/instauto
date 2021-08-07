@@ -35,7 +35,9 @@ const List = () => {
         });
       });
     });
+    if (list.length === 0 && main) setList(main);
   }, [main]);
+
   return (
     <Container story={pathname.includes("story")}>
       {pathname.includes("story")

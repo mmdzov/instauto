@@ -43,3 +43,41 @@ export const DiscountCodeFormContainer = styled.form`
     margin-right: 10px;
   }
 `;
+
+export const DiscountListContainer = styled.div`
+  margin-top: 10px;
+  & .discountNotFound {
+    text-align: center;
+    margin-top: 40px;
+    direction: rtl;
+    font-size: 0.9rem;
+    color: #949494;
+  }
+  & .label {
+    margin: 15px 0px;
+    direction: rtl;
+    font-weight: bold;
+    margin-top: 25px;
+  }
+  & .item {
+    direction: rtl;
+    margin-top: 5px;
+    padding: 10px 10px;
+    background: #673ab7;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    color: white;
+    & .itemTitle {
+    }
+  }
+
+  & .ant-statistic-content {
+    height: 20px;
+  }
+
+  & .ant-statistic-content-value {
+    font-size: 0.9rem;
+    display: block;
+    color: white;
+  }
+`;

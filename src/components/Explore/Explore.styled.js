@@ -4,14 +4,14 @@ export const ExploreListContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 33%);
   padding: 0 2px;
-  grid-gap: 2px;
+  grid-gap: 1px;
   margin-top: 13px;
   & .item {
     & img {
       width: 100%;
       height: 125px;
       cursor: pointer;
-      border-radius: 5px;
+      /* border-radius: 5px; */
     }
   }
 `;

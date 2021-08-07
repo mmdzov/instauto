@@ -2,11 +2,23 @@ import DiscountCodeInfo from "../../components/DiscountCode/DiscountCodeInfo";
 import DiscountCodeForm from "../../components/DiscountCode/DiscountCodeForm";
 import { useState } from "react";
 import styled from "styled-components";
+import DiscountList from "../../components/DiscountCode/DiscountList";
 
 const DiscountCode = () => {
   const [successJoin, setSuccessJoin] = useState(false);
   const [code, setCode] = useState("");
-
+  const [list, setList] = useState([
+    {
+      code: "4FZ2Jsj",
+      title: "تخفیف 50% بر روی تمام قیمت ها",
+      expire: 1000 * (60 * 60 * 24 * 10),
+    },
+    {
+      code: "5GfseJsj",
+      title: "تخفیف خرید الماس تا پایان ماه",
+      expire: 1000 * (60 * 10 * 4 - 35) * 30,
+    },
+  ]);
   return (
     <Container className="container">
       <DiscountCodeInfo joined={successJoin} setJoin={setSuccessJoin} />
@@ -17,6 +29,7 @@ const DiscountCode = () => {
           رسانی کد های تخفیف بهره مند شوید.
         </div>
       ) : null}
+      <DiscountList list={list} />
     </Container>
   );
 };
