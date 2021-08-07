@@ -23,6 +23,7 @@ const SimpleNavigation = () => {
     else if (path.includes("lottery") && path.includes("add"))
       setTitle(`ایجاد قرعه کشی`);
     else if (path.includes("lottery")) setTitle(`قرعه کشی`);
+    else if (path.includes("auction")) setTitle(`حراج و مزایده`);
     else if (path.includes("messages")) setTitle(`پیغام ها`);
     else if (path.includes("order") && path.includes("new"))
       setTitle("سفارش جدید");

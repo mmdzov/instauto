@@ -1,4 +1,4 @@
-import { Container } from "./BottomNavigation.styled";
+import { Container, ContainerLayout } from "./BottomNavigation.styled";
 import HomeIcon from "@material-ui/icons/Home";
 import StoreIcon from "@material-ui/icons/Store";
 import SettingsIcon from "@material-ui/icons/Settings";
@@ -8,9 +8,11 @@ import { useHistory } from "react-router-dom";
 import AddIcon from "@material-ui/icons/Add";
 import PublicIcon from "@material-ui/icons/Public";
 import ExploreOutlinedIcon from "@material-ui/icons/ExploreOutlined";
-import { CoffeeOutlined } from "@ant-design/icons";
+import { CoffeeOutlined, EditOutlined } from "@ant-design/icons";
 import SettingsOutlinedIcon from "@material-ui/icons/SettingsOutlined";
 import HomeOutlinedIcon from "@material-ui/icons/HomeOutlined";
+import { useEffect } from "react";
+import useDetectEndScroll from "../../hooks/useDetectEndScroll";
 
 const BottomNavigation = () => {
   const [label] = useState(true);
@@ -44,28 +46,39 @@ const BottomNavigation = () => {
       history.push(path);
     }
   };
+  const { detectEndScroll, hasEndScroll } = useDetectEndScroll();
+  useEffect(() => {
+    const cntr = document.getElementsByClassName("container")[0];
+    cntr.addEventListener("scroll", detectEndScroll);
+    cntr.addEventListener("load", detectEndScroll);
+  }, []);
   return (
-    <Container>
-      <div className="bottomNavContainer">
-        {list?.map((item) => (
-          <div
-            className={`item ${item?.centered ? "centered" : ""}`}
-            key={item?.url}
-            onClick={() => handleGo(item?.url)}
-          >
-            {item?.Icon ? (
-              <div
-                className="icon"
-                style={{ color: item?.color ? item?.color : "" }}
-              >
-                <item.Icon />
-              </div>
-            ) : null}
-            {label ? <div className="label">{item?.label}</div> : null}
-          </div>
-        ))}
+    <ContainerLayout>
+      <div className="editMode" style={{ opacity: hasEndScroll ? ".7" : "1" }}>
+        <EditOutlined />
       </div>
-    </Container>
+      <Container>
+        <div className="bottomNavContainer">
+          {list?.map((item) => (
+            <div
+              className={`item ${item?.centered ? "centered" : ""}`}
+              key={item?.url}
+              onClick={() => handleGo(item?.url)}
+            >
+              {item?.Icon ? (
+                <div
+                  className="icon"
+                  style={{ color: item?.color ? item?.color : "" }}
+                >
+                  <item.Icon />
+                </div>
+              ) : null}
+              {label ? <div className="label">{item?.label}</div> : null}
+            </div>
+          ))}
+        </div>
+      </Container>
+    </ContainerLayout>
   );
 };
 

@@ -3,8 +3,8 @@ import FavoriteBorderIcon from "@material-ui/icons/FavoriteBorder";
 import FavoriteIcon from "@material-ui/icons/Favorite";
 import { useDispatch } from "react-redux";
 import { commentLiked } from "../../store/actions/userAction";
-import LinesEllipsis from "react-lines-ellipsis";
 import { CommentItemContainer as Container } from "./Home.styled";
+import LineEllipsis from "../utilities/LineEllipsis";
 
 const CommentItem = ({ item }) => {
   const dispatch = useDispatch();
@@ -22,7 +22,7 @@ const CommentItem = ({ item }) => {
       <div className="content">
         <div className="username">{item?.account?.username}</div>
         <div className={`text ${handleRtl(item?.commentText) ? "rtl" : ""}`}>
-          <LinesEllipsis
+          <LineEllipsis
             text={item?.commentText}
             maxLine="3"
             ellipsis="..."

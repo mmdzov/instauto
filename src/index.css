@@ -37,7 +37,7 @@ code {
 }
 * {
   font-family: samim;
-  outline: none !important; 
+  outline: none !important;
 }
 body {
   overflow: hidden;
@@ -64,4 +64,29 @@ input:-webkit-autofill:hover,
 input:-webkit-autofill:focus,
 input:-webkit-autofill:active {
   -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
+.ant-input:focus,
+.ant-input-focused {
+  box-shadow: unset !important;
+  border: 1px solid #d0d0d0 !important;
+}
+
+.ant-input:hover {
+  border: 1px solid #ccc !important;
+}
+.ant-modal-confirm-body {
+  direction: rtl;
+}
+.ant-modal-confirm-content {
+  font-size: 0.8rem !important;
+  padding: 0 0px;
+  width: 100%;
+}
+.ant-modal {
+  max-width: calc(100vw - 40px) !important;
+}
+
+button {
+  border: 0px;
 }

@@ -156,7 +156,7 @@ const Navigation = () => {
           style={{ height: "40px", width: "40px", borderRadius: "100px" }}
           alt=""
         />
-        <div className="username">mmdzov</div>
+        {/* <div className="username">mmdzov</div> */}
       </div>
       <div className="coinContainer">
         <div className="coinCount" style={{ marginBottom: "-4px" }}>

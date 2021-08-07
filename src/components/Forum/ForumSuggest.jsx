@@ -3,6 +3,8 @@ import { ForumSuggestContainer as Container } from "./Forum.styled";
 import MovieCreationIcon from "@material-ui/icons/MovieCreation";
 import NewReleasesIcon from "@material-ui/icons/NewReleases";
 import MonetizationOnIcon from "@material-ui/icons/MonetizationOn";
+import Share from "../Share/Share";
+
 const ForumSuggest = () => {
   const [suggests] = useState([
     { title: "تخفیف ویژه سفارشات", off: "90%", type: "order" },
@@ -18,9 +20,18 @@ const ForumSuggest = () => {
       type: "ads",
     },
   ]);
+  const [openRef, setOpenRef] = useState(false);
+  const handleClickSuggest = (item) => {
+    if (item.type === "reffer") setOpenRef(true);
+  };
 
   return (
     <Container>
+      <Share
+        open={openRef}
+        setOpen={setOpenRef}
+        url={window.location.origin + "/login/ref/mmdzov"}
+      />
       <div className="title">پیشنهاد ویژه</div>
       {suggests?.map((item) => (
         <div
@@ -35,6 +46,7 @@ const ForumSuggest = () => {
               ? "#673ab7"
               : "#ccc",
           }}
+          onClick={() => handleClickSuggest(item)}
         >
           <div className="dashedLine"></div>
           <div className="itemTitle">{item?.title}</div>

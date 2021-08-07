@@ -1,12 +1,16 @@
 import { Modal as Container } from "antd";
+import { useEffect } from "react";
 
 const Modal = ({
   children,
   open,
   title = "",
+  okText = "تأیید",
+  cancelText = "لغو",
   setOpen = () => {},
   onCancel = () => {},
   onSubmit = () => {},
+  submitVisible = true,
 }) => {
   const handleClose = () => {
     onCancel();
@@ -16,14 +20,22 @@ const Modal = ({
     onSubmit();
     setOpen(false);
   };
+  useEffect(() => {
+    if (!submitVisible && open) {
+      const submit = document.querySelectorAll(
+        ".ant-btn.ant-btn-primary.ant-btn-rtl"
+      );
+      submit[0].style.display = "none";
+    }
+  }, [submitVisible, open]);
   return (
     <Container
       // title={title}
       centered
       visible={open}
       onOk={handleSubmit}
-      okText="تأیید"
-      cancelText="لغو"
+      okText={okText}
+      cancelText={cancelText}
       onCancel={handleClose}
       style={{ maxWidth: 300, minWidth: 200, direction: "rtl" }}
     >

@@ -218,12 +218,11 @@ const Container = styled.div`
 
   & .ant-tabs > .ant-tabs-nav,
   .ant-tabs > div > .ant-tabs-nav {
-    margin-bottom: 0px !important;    
+    margin-bottom: 0px !important;
     margin-top: -46px;
     position: fixed;
     width: 100%;
     right: 0;
-
   }
   & .item {
     display: grid;

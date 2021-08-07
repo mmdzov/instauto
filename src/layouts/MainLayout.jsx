@@ -7,7 +7,12 @@ import Navigation from "../components/Navigation/Navigation";
 import SimpleNavigation from "../components/Navigation/SimpleNavigation";
 import useDevice from "../hooks/useDevice";
 
-const MainLayout = ({ main = false, topNav = true, children }) => {
+const MainLayout = ({
+  main = false,
+  topNav = true,
+  bottomNav = true,
+  children,
+}) => {
   const mobile = useDevice(handleSetHeight);
   const { pathname } = useLocation();
   const [contentHeight, setContentHeight] = useState(0);
@@ -22,10 +27,11 @@ const MainLayout = ({ main = false, topNav = true, children }) => {
     const antTabNav = document
       .getElementsByClassName("ant-tabs-nav")[0]
       ?.getBoundingClientRect()?.height;
-    const bottomNav = document
+    let btmNav = document
       .getElementsByClassName("bottomNavContainer")[0]
       ?.getBoundingClientRect()?.height;
-    let contentHeight = window.innerHeight - nav - bottomNav;
+    if (!bottomNav) btmNav = 0;
+    let contentHeight = window.innerHeight - nav - btmNav;
     if (antTabNav) {
       contentHeight -= antTabNav;
     }
@@ -37,13 +43,13 @@ const MainLayout = ({ main = false, topNav = true, children }) => {
   }
   useEffect(() => {
     handleSetHeight();
-  }, [mobile, pathname]);
+  }, [mobile, pathname, bottomNav]);
   return (
     <Container mobile={mobile} h={contentHeight}>
       {topNav ? <Navigation /> : <SimpleNavigation />}
       {/* {main ? <MainToolbar /> : null} */}
       {children}
-      {mobile ? <BottomNavigation /> : null}
+      {mobile && bottomNav ? <BottomNavigation /> : null}
     </Container>
   );
 };

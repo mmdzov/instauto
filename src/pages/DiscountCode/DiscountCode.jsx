@@ -26,11 +26,10 @@ const Container = styled.div`
   margin-top: 20px;
   & .title {
     text-align: right;
-    height: 75px;
+    /* height: 75px; */
     direction: rtl;
-    padding: 0 10px;
+    padding: 12px 10px;
     line-height: 25px;
-    padding-top: 12px;
     background: #ff5656;
     color: white;
     border-radius: 10px;

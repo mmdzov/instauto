@@ -1,5 +1,25 @@
 import styled from "styled-components";
 
+export const ContainerLayout = styled.div`
+  & .editMode {
+    position: fixed;
+    right: 25px;
+    bottom: 75px;
+    width: 50px;
+    height: 50px;
+    border-radius: 100px;
+    background: #2196f3;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    box-shadow: 3px 5px 15px -5px #484848;
+    cursor: pointer;
+    transition: 0.3s all ease-in-out;
+  }
+`;
+
 export const Container = styled.div`
   position: fixed;
   bottom: 0;
