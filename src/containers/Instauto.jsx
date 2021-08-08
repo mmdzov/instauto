@@ -25,6 +25,7 @@ import LotteryJoinMode from "../pages/AddLottery/LotteryJoinMode";
 import Auction from "../pages/Auction/Auction";
 import AuctionItem from "../pages/AuctionItem/AuctionItem";
 import Contact from "../pages/Contact/Contact";
+import New from "../pages/New/New";
 const Instauto = () => {
   const getData = async () => {};
   useEffect(() => {
@@ -62,10 +63,12 @@ const Instauto = () => {
           "/lottery",
           "/lottery/new",
           "/auction",
+          "/new",
         ]}
         exact
       >
         <MainLayout topNav={false}>
+          <Route path="/new" exact component={New} />
           <Route path="/auction" exact component={Auction} />
           <Route path="/lottery/new" exact component={LotteryCreateMode} />
           <Route path="/lottery" exact component={Lottery} />
