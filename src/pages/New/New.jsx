@@ -14,7 +14,7 @@ const New = () => {
     { title: "سفارش", Icon: ShoppingOutlined, url: "/order" },
     { title: "قرعه کشی", Icon: ShakeOutlined, url: "/lottery/new" },
     { title: "کد تخفیف", Icon: PercentageOutlined, url: "/discount-code" },
-    { title: "کسب و کار", Icon: WorkOutlineIcon, url: "/discount-code" },
+    { title: "کسب و کار", Icon: WorkOutlineIcon, url: "/work" },
     { title: "گفتگو", Icon: MessageOutlined, url: "/chat" },
     { title: "خرید", Icon: ShoppingCartOutlined, url: "/shop" },
   ]);
