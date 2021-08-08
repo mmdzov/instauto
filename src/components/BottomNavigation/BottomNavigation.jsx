@@ -25,7 +25,7 @@ const BottomNavigation = () => {
       centered: false,
     },
 
-    { label: "", Icon: AddIcon, url: "/store", centered: true },
+    { label: "", Icon: AddIcon, url: "/new", centered: true },
     { label: "", Icon: null, url: "", centered: false },
     {
       label: "تالار",
@@ -54,9 +54,9 @@ const BottomNavigation = () => {
   }, []);
   return (
     <ContainerLayout>
-      <div className="editMode" style={{ opacity: hasEndScroll ? ".7" : "1" }}>
+      {/* <div className="editMode" style={{ opacity: hasEndScroll ? ".7" : "1" }}>
         <EditOutlined />
-      </div>
+      </div> */}
       <Container>
         <div className="bottomNavContainer">
           {list?.map((item) => (

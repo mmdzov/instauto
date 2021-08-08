@@ -11,6 +11,7 @@ const Modal = ({
   onCancel = () => {},
   onSubmit = () => {},
   submitVisible = true,
+  closeVisible = true,
 }) => {
   const handleClose = () => {
     onCancel();
@@ -25,6 +26,10 @@ const Modal = ({
       const submit = document.querySelectorAll(
         ".ant-btn.ant-btn-primary.ant-btn-rtl"
       );
+      submit[0].style.display = "none";
+    }
+    if (!closeVisible && open) {
+      const submit = document.querySelectorAll(".ant-modal-close");
       submit[0].style.display = "none";
     }
   }, [submitVisible, open]);

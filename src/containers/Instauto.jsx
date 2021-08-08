@@ -24,6 +24,7 @@ import LotteryCreateMode from "../pages/AddLottery/LotteryCreateMode";
 import LotteryJoinMode from "../pages/AddLottery/LotteryJoinMode";
 import Auction from "../pages/Auction/Auction";
 import AuctionItem from "../pages/AuctionItem/AuctionItem";
+import Contact from "../pages/Contact/Contact";
 const Instauto = () => {
   const getData = async () => {};
   useEffect(() => {
@@ -81,6 +82,11 @@ const Instauto = () => {
           <Route path="/order/:token" component={OrderTracking} />
           <Route path="/discount-code" component={DiscountCode} />
           <Route path="/messages" component={Messages} />
+        </MainLayout>
+      </Route>
+      <Route path={["/contact"]}>
+        <MainLayout topNav={false} bottomNav={false} floatingBtn={false}>
+          <Route path="/contact" exact component={Contact} />
         </MainLayout>
       </Route>
       <Route path={["/auction/:token"]}>
