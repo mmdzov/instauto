@@ -10,7 +10,7 @@ const ScoreHeader = () => {
   const history = useHistory();
   const handlePremiumAccount = () => {
     if (!premium) {
-      history.push("/store/premium");
+      history.push("/shop");
     }
   };
   return (

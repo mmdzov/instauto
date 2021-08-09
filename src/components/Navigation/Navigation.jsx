@@ -73,7 +73,7 @@ const Navigation = () => {
     {
       title: "فروشگاه",
       Icon: StoreFrontIcon,
-      url: "/store",
+      url: "/shop",
       type: "store",
       token: ~~(Math.random() * 9999999),
       unread: false,

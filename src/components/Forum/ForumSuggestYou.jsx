@@ -6,10 +6,10 @@ import MonetizationOnIcon from "@material-ui/icons/MonetizationOn";
 import { useHistory } from "react-router-dom";
 const ForumSuggestYou = () => {
   const [suggests] = useState([
-    { title: "1000 سکه بخر و 500 سکه جایزه بگیر", url: "/store/coin/500" },
+    { title: "1000 سکه بخر و 500 سکه جایزه بگیر", url: "/shop/coin/500" },
     {
       title: "پکیج طلای سکه بخر و یک پکیج الماس نقره ای هدیه بگیر",
-      url: "/store/coin/gold",
+      url: "/shop/coin/gold",
     },
   ]);
   const history = useHistory();

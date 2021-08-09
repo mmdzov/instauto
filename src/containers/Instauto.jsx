@@ -26,6 +26,7 @@ import AuctionItem from "../pages/AuctionItem/AuctionItem";
 import Contact from "../pages/Contact/Contact";
 import New from "../pages/New/New";
 import OrderPlan from "../pages/OrderPlan/OrderPlan";
+import Store from "../pages/Store/Store";
 const Instauto = () => {
   const getData = async () => {};
   useEffect(() => {
@@ -68,10 +69,12 @@ const Instauto = () => {
           "/order/plans/:plan",
           "/user-order/:order",
           "/new",
+          "/shop",
         ]}
         exact
       >
         <MainLayout topNav={false}>
+          <Route path="/shop" exact component={Store} />
           <Route path="/new" exact component={New} />
           <Route path="/auction" exact component={Auction} />
           <Route path="/lottery/new" exact component={LotteryCreateMode} />
