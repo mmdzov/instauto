@@ -34,7 +34,10 @@ const OrderTrackingList = ({ list }) => {
     return (
       <OrderNotFound className="addOrder">
         هنوز سفارشی ثبت نکردی!
-        <div className="addOrderButton" onClick={() => history.push("/order")}>
+        <div
+          className="addOrderButton"
+          onClick={() => history.push("/order/plans")}
+        >
           ثبت سفارش
         </div>
       </OrderNotFound>
@@ -48,7 +51,7 @@ const OrderTrackingList = ({ list }) => {
         setOpen={setOpenReport}
         callback={onReport}
       />
-      <div className="addOrderBox" onClick={() => history.push("/order")}>
+      <div className="addOrderBox" onClick={() => history.push("/order/plans")}>
         <div className="">ثبت سفارش</div>
         <div className="">
           <ShoppingBasketIcon />
@@ -108,9 +111,7 @@ const OrderTrackingList = ({ list }) => {
             </div>
             <div
               className="seeMore"
-              onClick={() =>
-                history.push(`/order/${item?.username}/${item?.order}`)
-              }
+              onClick={() => history.push(`/user-order/${item?.order}`)}
             >
               نمایش جزئیات
             </div>

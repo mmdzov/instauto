@@ -5,7 +5,6 @@ import Forum from "../pages/Forum/Forum";
 import Home from "../pages/Home/Home";
 import Login from "../pages/Login/Login";
 import NewOrder from "../pages/NewOrder/NewOrder";
-import Order from "../pages/Order/Order";
 import OrderTracking from "../pages/OrderTracking/OrderTracking";
 import Score from "../pages/Score/Score";
 import Setting from "../pages/Setting/Setting";
@@ -26,6 +25,7 @@ import Auction from "../pages/Auction/Auction";
 import AuctionItem from "../pages/AuctionItem/AuctionItem";
 import Contact from "../pages/Contact/Contact";
 import New from "../pages/New/New";
+import OrderPlan from "../pages/OrderPlan/OrderPlan";
 const Instauto = () => {
   const getData = async () => {};
   useEffect(() => {
@@ -62,7 +62,11 @@ const Instauto = () => {
           "/explore",
           "/lottery",
           "/lottery/new",
+          "/order/plans",
           "/auction",
+          "/user-order",
+          "/order/plans/:plan",
+          "/user-order/:order",
           "/new",
         ]}
         exact
@@ -79,10 +83,11 @@ const Instauto = () => {
           <Route path="/convert" exact component={Convert} />
           <Route path="/transfer" exact component={Transfer} />
           <Route path="/best" exact component={Best} />
-          <Route path="/order/new" exact component={NewOrder} />
-          <Route path="/order" exact component={Order} />
-          <Route path="/order/:token/:order" exact component={SingleOrder} />
-          <Route path="/order/:token" component={OrderTracking} />
+          {/* <Route path="/order/new" exact component={NewOrder} /> */}
+          <Route path="/order/plans" exact component={NewOrder} />
+          <Route path="/user-order/:order" exact component={SingleOrder} />
+          <Route path="/order/plans/:plan" component={OrderPlan} />
+          <Route path="/user-order" component={OrderTracking} />
           <Route path="/discount-code" component={DiscountCode} />
           <Route path="/messages" component={Messages} />
         </MainLayout>

@@ -8,20 +8,24 @@ import {
   ShoppingCartOutlined,
 } from "@ant-design/icons";
 import WorkOutlineIcon from "@material-ui/icons/WorkOutline";
+import { useHistory } from "react-router-dom";
 
 const New = () => {
   const [list] = useState([
-    { title: "سفارش", Icon: ShoppingOutlined, url: "/order" },
+    { title: "سفارش", Icon: ShoppingOutlined, url: "/order/plans" },
     { title: "قرعه کشی", Icon: ShakeOutlined, url: "/lottery/new" },
     { title: "کد تخفیف", Icon: PercentageOutlined, url: "/discount-code" },
     { title: "کسب و کار", Icon: WorkOutlineIcon, url: "/work" },
     { title: "گفتگو", Icon: MessageOutlined, url: "/chat" },
     { title: "خرید", Icon: ShoppingCartOutlined, url: "/shop" },
   ]);
+  
+  const history = useHistory();
+
   return (
     <Container className="container">
       {list?.map((item) => (
-        <div className="item">
+        <div className="item" onClick={() => history.push(item?.url)}>
           <div className="title">{item?.title}</div>
           <item.Icon />
         </div>

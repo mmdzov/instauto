@@ -87,7 +87,7 @@ const SingleOrderContent = ({ data }) => {
         <div
           className="orderBottom"
           style={{ background: "#3ea5f3" }}
-          onClick={() => history.push("/order/new")}
+          onClick={() => history.push("/order/plans")}
         >
           سفارش جدید
         </div>

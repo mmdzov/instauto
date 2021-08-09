@@ -49,3 +49,99 @@ export const ContainerOrderList = styled.div`
     }
   }
 `;
+
+export const OrderPlansContainer = styled.div`
+  margin: 10px 0px;
+  & .item {
+    direction: rtl;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    padding: 0 16px;
+    width: 91%;
+    border: 1px solid #eee;
+    margin: 0 auto;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    font-size: 0.8rem;
+    justify-content: space-between;
+    cursor: pointer;
+    background: #fbfbfb;
+  }
+  & .more {
+    display: flex;
+    align-items: center;
+    font-size: 0.7rem;
+    & .moreBackIcon {
+      height: 100%;
+      line-height: 42px;
+      margin-right: -2px;
+    }
+    & svg {
+      font-size: 1.3rem;
+    }
+  }
+`;
+
+export const OrderPlanItemContainer = styled.div`
+  & > .title {
+    direction: rtl;
+    font-size: 1.2rem;
+    padding: 0 10px;
+    margin: 10px 0px;
+    color: #292929;
+  }
+  & .list {
+    padding: 0 10px;
+    margin: 5px 0px;
+  }
+  & .list .item {
+    direction: rtl;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    padding: 0 10px;
+    width: 95%;
+    border: 1px solid #eee;
+    margin: 0 auto;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    font-size: 0.8rem;
+    justify-content: space-between;
+    cursor: pointer;
+    background: #fbfbfb;
+    & .price {
+      display: flex;
+      flex-direction: column-reverse;
+      height: 100%;
+      justify-content: space-around;
+    }
+  }
+
+  & .custom.item {
+    margin-bottom: 20px;
+    & .rangeslider.rangeslider-horizontal {
+      width: 100%;
+    }
+    & .title {
+      height: 40px;
+      display: flex;
+      align-items: center;
+      font-size: 1rem;
+    }
+    & input {
+      width: 50px;
+      padding: 0 0px;
+      text-align: center;
+      margin-left: 10px;
+      height: 42px;
+    }
+    & .inputs {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: row-reverse;
+      align-items: center;
+      padding: 0 10px;
+    }
+  }
+`;

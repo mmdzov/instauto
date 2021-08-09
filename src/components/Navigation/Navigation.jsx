@@ -65,7 +65,7 @@ const Navigation = () => {
     {
       title: "سفارشات",
       Icon: InboxIcon,
-      url: "/order/mmdzov",
+      url: "/user-order",
       type: "order",
       token: ~~(Math.random() * 9999999),
       unread: false,
